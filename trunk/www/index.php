@@ -1,14 +1,18 @@
 <?php
 
 require 'class/smarty/Smarty.class.php';
-require 'class/access.class.php';
+require 'class/user.class.php';
 
-
+//initialization
+$user = new user();
 $smarty = new Smarty;
+
 
 $smarty->compile_check = true;
 $smarty->debugging = true;
 
+
+//exemplos
 $smarty->assign("Name","Fred Irving Johnathan Bradley Peppergill");
 $smarty->assign("FirstName",array("John","Mary","James","Henry"));
 $smarty->assign("LastName",array("Doe","Smith","Johnson","Case"));
@@ -21,6 +25,7 @@ $smarty->assign("contacts", array(array("phone" => "1", "fax" => "2", "cell" => 
 $smarty->assign("option_values", array("NY","NE","KS","IA","OK","TX"));
 $smarty->assign("option_output", array("New York","Nebraska","Kansas","Iowa","Oklahoma","Texas"));
 $smarty->assign("option_selected", "NE");
+//fim dos exemplos
 
 $smarty->display('index.tpl');
 
