@@ -1,8 +1,11 @@
 <?php
-
-include "db_config.class.php";
-
 /**
+ *
+ * Link para a documentação
+ * http://phpuserclass.com/manual/phpUserClass/flexibleAccess.html
+ *
+ *
+ *
  * PHP Class to user access (login, register, logout, etc)
  * 
  * <code><?php
@@ -35,9 +38,38 @@ include "db_config.class.php";
  * @param string $dbTable
  */
 
-class flexibleAccess extends db {
-
- var $dbTable  = 'users';
+class flexibleAccess{
+  /*Settings*/
+  /**
+   * The database that we will use
+   * var string
+   */
+  var $dbName = 'database';
+  /**
+   * The database host
+   * var string
+   */
+  var $dbHost = 'localhost';
+  /**
+   * The database port
+   * var int
+   */
+  var $dbPort = 3306;
+  /**
+   * The database user
+   * var string
+   */
+  var $dbUser = 'user';
+  /**
+   * The database password
+   * var string
+   */
+  var $dbPass = 'password';
+  /**
+   * The database table that holds all the information
+   * var string
+   */
+  var $dbTable  = 'users';
   /**
    * The session variable ($_SESSION[$sessionVariable]) which will hold the data while the user is logged on
    * var string
@@ -48,7 +80,7 @@ class flexibleAccess extends db {
    * var array
    */
   var $tbFields = array(
-  	'userID'=> 'userID',
+  	'userID'=> 'userID', 
   	'login' => 'username',
   	'pass'  => 'password',
   	'email' => 'email',
