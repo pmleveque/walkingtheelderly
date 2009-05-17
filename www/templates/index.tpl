@@ -1,4 +1,4 @@
-{include file="header.tpl" title=foo}
+{include file="header.tpl"}
 
 
 
