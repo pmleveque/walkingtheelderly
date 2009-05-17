@@ -1,4 +1,4 @@
-{include file="header.tpl" title=foo}
+{include file="header.tpl" title=login}
 
 <h1>Login</h1>
 	<p><form method="post" action="{$php_self}/login_submit" />
