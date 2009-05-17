@@ -109,10 +109,31 @@ if ($page="cadastrar_usuario_submit") {
 			'username' => $_POST['username'],
 			'email' => $_POST['email'],
 			'password' => $_POST['pwd'],
-			'active' => 1
-			//
-		//adicionar os outros dados...
-		//
+			'active' => 1,
+			'nome' => $_POST['nome'],
+			'cpf' => $_POST['cpf'],
+			'rg' => $_POST['rg'],
+			'endereco' => $_POST['endereco'],
+			'cidade' => $_POST['cidade'],
+			'estado' => $_POST['estado'],
+			'bairro' => $_POST['bairro'],
+			'telefone' => $_POST['telefone'],
+			'fumo' => $_POST['fumo'],
+			'alcool' => $_POST['alcool'],
+			'observacoes' => $_POST['observacoes'],
+			'nome2' => $_POST['nome2'],
+			'cpf2' => $_POST['cpf2'],
+			'rg2' => $_POST['rg2'],
+			'endereco2' => $_POST['endereco2'],
+			'cidade2' => $_POST['cidade2'],
+			'estado2' => $_POST['estado2'],
+			'bairro2' => $_POST['bairro2'],
+			'telefone2' => $_POST['telefone2'],
+			'preferencias2' => $_POST['preferencias2'],
+			'remedios2' => $_POST['remedios2'],
+			'cuidados2' => $_POST['cuidados2'],
+			'observacoes2' => $_POST['observacoes2']
+			
 		);
 		$userID = $user->insertUser($data);//The method returns the userID of the new user or 0 if the user is not added
 		if ($userID==0)
