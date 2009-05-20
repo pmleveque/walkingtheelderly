@@ -12,7 +12,11 @@
 	Estado: <input type="text" name="endereco" /><br /><br />
 </p>
 
+
+
 <input type="submit" value="Cadastrar-se" />
 </form>
+
+
 
 {include file="footer.tpl"}
