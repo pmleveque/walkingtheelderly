@@ -146,7 +146,7 @@ class flexibleAccess{
    * @param array $settings
    * @return void
    */
-  function flexibleAccess($dbConn = '', $settings = '')
+  function flexibleAccess($dbConn = '',$dbName = '' , $settings = '')
   {
 	    if ( is_array($settings) ){
 		    foreach ( $settings as $k => $v ){
