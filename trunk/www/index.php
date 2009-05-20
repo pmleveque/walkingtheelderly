@@ -109,8 +109,11 @@ if ($page="cadastrar_usuario_submit") {
 			'username' => $_POST['username'],
 			'email' => $_POST['email'],
 			'password' => $_POST['pwd'],
-			'active' => 1,
-			'nome' => $_POST['nome'],
+			'active' => 1
+			);
+        
+        $data = array(
+            'nome' => $_POST['nome'],
 			'cpf' => $_POST['cpf'],
 			'rg' => $_POST['rg'],
 			'endereco' => $_POST['endereco'],
@@ -133,8 +136,8 @@ if ($page="cadastrar_usuario_submit") {
 			'remedios2' => $_POST['remedios2'],
 			'cuidados2' => $_POST['cuidados2'],
 			'observacoes2' => $_POST['observacoes2']
-			
-		);
+        );
+        
 		$userID = $user->insertUser($data);//The method returns the userID of the new user or 0 if the user is not added
 		if ($userID==0)
 			echo 'User not registered';//user is already registered or something like that
