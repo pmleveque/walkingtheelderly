@@ -54,7 +54,7 @@ if ( isset($_REQUEST['page'])){
 
 if ($page="login") {
 	$smarty->assign("php_self", $_SERVER['PHP_SELF']);
-	$smarty->display('login.tpl');
+	$smarty->display('templates/login.tpl');
 }
 
 
@@ -93,7 +93,7 @@ if ($page="cadastrar_usuario") {
 	//TODO: nada aqui...
 	//as modificações tem que ser feitas no arquivo tpl seguinte (é o proprio formulario)
 	$smarty->assign("php_self", $_SERVER['PHP_SELF']);
-	$smarty->display('cadastrar_usuario.tpl');
+	$smarty->display('templates/cadastrar_usuario.tpl');
 }
 
 
@@ -175,7 +175,7 @@ if ( $user->is_loaded() ){
 
 		$smarty->assign("acompanhantes", $listagem_acompanhantes);
 		$smarty->assign("idosos", $listagem_idosos);
-		$smarty->display('index.tpl');
+		$smarty->display('templates/index.tpl');
 	}
 	
 	
@@ -190,7 +190,7 @@ if ( $user->is_loaded() ){
 	if ($page="cadastrar_viagem") {
 		//TODO: nada aqui...
 		//as modificações tem que ser feitas no arquivo tpl seguinte (é o proprio formulario)
-		$smarty->display('cadastrar_viagem.tpl');
+		$smarty->display('templates/cadastrar_viagem.tpl');
 	}
 
 
