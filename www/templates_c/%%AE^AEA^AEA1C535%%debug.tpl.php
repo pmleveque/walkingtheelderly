@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.22, created on 2009-05-27 10:34:08
+<?php /* Smarty version 2.6.22, created on 2009-05-27 10:43:25
          compiled from file:/Users/pmleveque/Sites/walkingtheelderly/trunk/www/classes/smarty/debug.tpl */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
 smarty_core_load_plugins(array('plugins' => array(array('function', 'assign_debug_info', 'file:/Users/pmleveque/Sites/walkingtheelderly/trunk/www/classes/smarty/debug.tpl', 3, false),array('function', 'cycle', 'file:/Users/pmleveque/Sites/walkingtheelderly/trunk/www/classes/smarty/debug.tpl', 119, false),array('modifier', 'escape', 'file:/Users/pmleveque/Sites/walkingtheelderly/trunk/www/classes/smarty/debug.tpl', 102, false),array('modifier', 'string_format', 'file:/Users/pmleveque/Sites/walkingtheelderly/trunk/www/classes/smarty/debug.tpl', 105, false),array('modifier', 'debug_print_var', 'file:/Users/pmleveque/Sites/walkingtheelderly/trunk/www/classes/smarty/debug.tpl', 121, false),)), $this); ?>
