@@ -1,4 +1,10 @@
-{include file="header.tpl" title=foo}
+<?php /* Smarty version 2.6.22, created on 2009-05-27 10:24:52
+         compiled from cadastrar_usuario.tpl */ ?>
+<?php $_smarty_tpl_vars = $this->_tpl_vars;
+$this->_smarty_include(array('smarty_include_tpl_file' => "header.tpl", 'smarty_include_vars' => array('title' => 'foo')));
+$this->_tpl_vars = $_smarty_tpl_vars;
+unset($_smarty_tpl_vars);
+ ?>
 
 <form method="post" action="cadastrar_usuario_submit.php" />
 
@@ -51,4 +57,8 @@ conhecer um pouco sobre ti...
 </form>
 
 
-{include file="footer.tpl"}
+<?php $_smarty_tpl_vars = $this->_tpl_vars;
+$this->_smarty_include(array('smarty_include_tpl_file' => "footer.tpl", 'smarty_include_vars' => array()));
+$this->_tpl_vars = $_smarty_tpl_vars;
+unset($_smarty_tpl_vars);
+ ?>

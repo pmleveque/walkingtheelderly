@@ -10,7 +10,7 @@
 
 <div id="wrap">
 	<div id="header">
-
+		<h1>Walking the Elderly</h1>
 	</div>
 
 	<div id="sidebar">{include file="menu_lateral.tpl" title=foo}</div>
