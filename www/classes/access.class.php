@@ -68,7 +68,7 @@ class flexibleAccess{
    * The database that we will use
    * var string
    */
-  var $dbName = 'database';
+  var $dbName = 'grupo3';
   /**
    * The database host
    * var string
@@ -146,9 +146,10 @@ class flexibleAccess{
    * @param array $settings
    * @return void
    */
-  function flexibleAccess($dbConn = '',$dbName = '' , $settings = '')
+  function flexibleAccess($dbConn,$dbName, $settings = '')
   {
-	    if ( is_array($settings) ){
+	    $this->$dbName = $dbName;
+		if ( is_array($settings) ){
 		    foreach ( $settings as $k => $v ){
 				    if ( !isset( $this->{$k} ) ) die('Property '.$k.' does not exists. Check your settings.');
 				    $this->{$k} = $v;
