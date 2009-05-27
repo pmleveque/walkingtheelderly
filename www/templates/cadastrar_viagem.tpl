@@ -1,6 +1,6 @@
 {include file="header.tpl" title=foo}
 
-<form method="post" action="{$php_self}/?page=cadastrar_viagem_submit" />
+<form method="post" action="cadastrar_viagem_submit.php" />
 
 <h1>Dados da viagem</h1>
 <p>Digite os dados para o cadastro da viagem

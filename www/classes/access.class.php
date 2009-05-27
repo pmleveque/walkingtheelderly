@@ -68,7 +68,7 @@ class flexibleAccess{
    * The database that we will use
    * var string
    */
-  var $dbName = 'grupo3';
+  var $dbName = 'wte';
   /**
    * The database host
    * var string
