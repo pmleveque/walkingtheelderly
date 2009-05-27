@@ -129,7 +129,7 @@ class flexibleAccess{
    * The method used to encrypt the password. It can be sha1, md5 or nothing (no encryption)
    * var string
    */
-  var $passMethod = 'sha1';
+  var $passMethod = '';
   /**
    * Display errors? Set this to true if you are going to seek for help, or have troubles with the script
    * var bool
