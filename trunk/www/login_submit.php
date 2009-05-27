@@ -9,7 +9,9 @@ if ( !$user->is_loaded() ) {
 			echo 'Wrong username and/or password';
 		}else{
 			//user is now loaded
-			//essa função seguinte faz a redireição
+			
+			
+			
 		}
 	}
 }
