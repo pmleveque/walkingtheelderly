@@ -8,7 +8,6 @@ require 'initialize.inc.php';
 
 if (!empty($_POST['username'])){
 	//Register user:
-	$user = new flexibleAccess($link); // var $link definido no arquivo bd.php
 	//The logic is simple. We need to provide an associative array, where keys are the field names and values are the values :)
 	$data = array(
 		'username' => $_POST['username'],

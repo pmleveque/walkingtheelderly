@@ -18,6 +18,8 @@ if ( $user->is_loaded() ){
 
 }else{
 	// neste caso, o usuario não é logado... ele precisa se logar:
+
+	
 	header('Location: login.php');
 }
 

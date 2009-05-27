@@ -1,5 +1,7 @@
 <?php
 
+error_reporting(E_ALL); 
+
 require 'dbconfig.php'; //retorna a variavel $link
 require 'classes/smarty/Smarty.class.php';
 require 'classes/access.class.php';
@@ -21,12 +23,8 @@ $smarty->debugging = true;
 // User (flexible access)
 /////////////////////////
 
-$user = new flexibleAccess($link, $bdName); // var $link definida no arquivo bd.php
+$user = new flexibleAccess($link); // var $link definida no arquivo bd.php
 $sqlObj = new db($link, $bdName); // Estancia o objeto SQL
-
-if ( $_GET['logout'] == 1 ) {
-	$user->logout('http://'.$_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF']);
-}
 
 
 
