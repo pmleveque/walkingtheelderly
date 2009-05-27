@@ -1,9 +1,9 @@
 <?php
 
 require 'dbconfig.php'; //retorna a variavel $link
-require 'class/smarty/Smarty.class.php';
-require 'class/access.class.php';
-require 'class/db.class.php';
+require 'classes/smarty/Smarty.class.php';
+require 'classes/access.class.php';
+require 'classes/db.class.php';
 
 
 ////////////////
