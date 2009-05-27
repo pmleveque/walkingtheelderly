@@ -6,10 +6,10 @@
 <p>Digite os dados para o cadastro da viagem
 </p>
 <p>
-	Data de Início: <input type="text" name="nome" /><br /><br />
-	Data Final: <input type="text" name="cpf" /><br /><br />
-	Cidade: <input type="text" name="rg" /><br /><br />
-	Estado: <input type="text" name="endereco" /><br /><br />
+	Data de Início dd.mm.aaaa: <input type="text" name="datainicio" /><br /><br />
+	Data Final dd.mm.aaaa: <input type="text" name="datafim" /><br /><br />
+	Cidade: <input type="text" name="cidade" /><br /><br />
+	Estado: <input type="text" name="estado" /><br /><br />
 </p>
 
 
