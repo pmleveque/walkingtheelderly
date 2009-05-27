@@ -5,12 +5,20 @@ require 'initialize.inc.php';
 
 if ( $user->is_loaded() ){
 	
-	//TODO:
-	//fazer o request das variaveis do formulario
-	//implementar o cadastramento
-	//fazer um redirect para a pagina inicial
-	
-	
+	if (!empty($_POST['username'])){
+
+        $user = new flexibleAccess($link); // var $link definido no arquivo bd.php
+	//The logic is simple. We need to provide an associative array, where keys are the field names and values are the values :)
+	$data = array(
+		'datainicio' => $_POST['datainicio'],
+		'datafim' => $_POST['datafim'],
+		'cidade' => $_POST['cidade'],
+        'estado' => $_POST['estado'],
+        );
+
+
+
+    }
 	}else{
 		// neste caso, o usuario não é logado... ele precisa se logar:
 		header('Location: login.php');
