@@ -52,13 +52,13 @@ if ( isset($_REQUEST['page'])){
 ////////////////
 
 
-if ($page="login") {
+if ($page=="login") {
 	$smarty->assign("php_self", $_SERVER['PHP_SELF']);
 	$smarty->display('templates/login.tpl');
 }
 
 
-if ($page="login_submit") {
+if ($page=="login_submit") {
 	if ( !$user->is_loaded() ) {
 		if ( isset($_POST['uname']) && isset($_POST['pwd'])){
 			if ( !$user->login($_POST['uname'],$_POST['pwd'],$_POST['remember'] )){
@@ -89,7 +89,7 @@ if ($page="login_submit") {
 ////////////////////////////
 
 
-if ($page="cadastrar_usuario") {
+if ($page=="cadastrar_usuario") {
 	//TODO: nada aqui...
 	//as modificações tem que ser feitas no arquivo tpl seguinte (é o proprio formulario)
 	$smarty->assign("php_self", $_SERVER['PHP_SELF']);
@@ -97,7 +97,7 @@ if ($page="cadastrar_usuario") {
 }
 
 
-if ($page="cadastrar_usuario_submit") {
+if ($page=="cadastrar_usuario_submit") {
 	//essa pagina recebe os resultados do formulario
 
 	if (!empty($_POST['username'])){
@@ -171,7 +171,7 @@ if ( $user->is_loaded() ){
 	// e dos acompanhantes do seu idoso
 	////////////////////////////
 
-	if ($page="index") {
+	if ($page=="index") {
 
 		$smarty->assign("acompanhantes", $listagem_acompanhantes);
 		$smarty->assign("idosos", $listagem_idosos);
@@ -187,7 +187,7 @@ if ( $user->is_loaded() ){
 	// (contem o formulario)
 	////////////////////////////	
 
-	if ($page="cadastrar_viagem") {
+	if ($page=="cadastrar_viagem") {
 		//TODO: nada aqui...
 		//as modificações tem que ser feitas no arquivo tpl seguinte (é o proprio formulario)
 		$smarty->display('templates/cadastrar_viagem.tpl');
@@ -205,7 +205,7 @@ if ( $user->is_loaded() ){
 	///////////////////////////////////////////////
 
 
-	else if ($page="cadastrar_viagem_submit") {
+	else if ($page=="cadastrar_viagem_submit") {
 
 		//TODO:
 		//fazer o request das variaveis do formulario
