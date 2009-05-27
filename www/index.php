@@ -10,6 +10,9 @@ if ( $user->is_loaded() ){
 	// e dos acompanhantes do seu idoso
 	////////////////////////////
 
+	$smarty = new Smarty;
+	$smarty->compile_check = true;
+	
 	$smarty->assign("acompanhantes", $listagem_acompanhantes);
 	$smarty->assign("idosos", $listagem_idosos);
 	$smarty->display('index.tpl');

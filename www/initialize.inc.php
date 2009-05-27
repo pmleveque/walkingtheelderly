@@ -8,14 +8,7 @@ require 'classes/access.class.php';
 require 'classes/db.class.php';
 
 
-////////////////
-// Inicialização
-// Smarty
-////////////////
 
-$smarty = new Smarty;
-$smarty->compile_check = true;
-$smarty->debugging = true;
 
 
 /////////////////////////
