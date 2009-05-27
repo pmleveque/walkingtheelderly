@@ -1,36 +1,5 @@
 <?php
-
-
-/*
-Adding a user to a table. Here is the table that I am using (it is the same we use with the default settings):
-====================== MySQL Dump ===============================
-CREATE TABLE `users` (
-  `userID` mediumint(8) unsigned NOT NULL auto_increment,
-  `username` varchar(50) NOT NULL default '',
-  `password` varchar(100) NOT NULL default '',
-  `email` varchar(150) NOT NULL default '',
-  `active` tinyint(1) NOT NULL default '0',
-  PRIMARY KEY  (`userID`),
-  UNIQUE KEY `username` (`username`),
-  UNIQUE KEY `email` (`email`),
-  KEY `active` (`active`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8;
-================================================================
-In this example we will automatically activate the user
-IMPORTANT:
-Do not use this example as is. Here we do not validate anything. In your application you should validate the data first, but you don't have to addslashes() as the class does this operation.
-http://phpUserClass.com
-*/
-
-
-
 /**
- *
- * Link para a documentação
- * http://phpuserclass.com/manual/phpUserClass/flexibleAccess.html
- *
- *
- *
  * PHP Class to user access (login, register, logout, etc)
  * 
  * <code><?php
@@ -50,6 +19,7 @@ http://phpUserClass.com
  * @license http://opensource.org/licenses/gpl-license.php GNU General Public License (GPL)
  * 
  * ==============================================================================
+
  */
 
 /**
@@ -129,7 +99,7 @@ class flexibleAccess{
    * The method used to encrypt the password. It can be sha1, md5 or nothing (no encryption)
    * var string
    */
-  var $passMethod = '';
+  var $passMethod = 'nothing';
   /**
    * Display errors? Set this to true if you are going to seek for help, or have troubles with the script
    * var bool
@@ -146,10 +116,9 @@ class flexibleAccess{
    * @param array $settings
    * @return void
    */
-  function flexibleAccess($dbConn,$dbName, $settings = '')
+  function flexibleAccess($dbConn = '', $settings = '')
   {
-	    $this->$dbName = $dbName;
-		if ( is_array($settings) ){
+	    if ( is_array($settings) ){
 		    foreach ( $settings as $k => $v ){
 				    if ( !isset( $this->{$k} ) ) die('Property '.$k.' does not exists. Check your settings.');
 				    $this->{$k} = $v;
@@ -324,7 +293,7 @@ class flexibleAccess{
   {
     //if (defined('DEVELOPMENT_MODE') ) echo '<b>Query to execute: </b>'.$sql.'<br /><b>Line: </b>'.$line.'<br />';
 	$res = mysql_db_query($this->dbName, $sql, $this->dbConn);
-	if ( !res )
+	if ( !$res )
 		$this->error(mysql_error($this->dbConn), $line);
 	return $res;
   }
