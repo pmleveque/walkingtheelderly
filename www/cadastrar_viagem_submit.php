@@ -7,7 +7,6 @@ if ( $user->is_loaded() ){
 	
 	if (!empty($_POST['username'])){
 
-        $user = new flexibleAccess($link); // var $link definido no arquivo bd.php
 	//The logic is simple. We need to provide an associative array, where keys are the field names and values are the values :)
 	$data = array(
 		'datainicio' => $_POST['datainicio'],

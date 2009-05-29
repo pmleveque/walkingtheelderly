@@ -15,3 +15,6 @@
 
 	<div id="sidebar">{include file="menu_lateral.tpl" title=foo}</div>
 	<div id="main">
+				<h1>{$title}</h1>
+		<p id="error">{$error}</p>
+		<p id="notice">{$notice}</p>

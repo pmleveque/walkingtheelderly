@@ -183,15 +183,13 @@ class flexibleAccess{
   	* param string $redirectTo
   	* @return bool
   */
-  function logout($redirectTo = '')
+  function logout()
   {
     setcookie($this->remCookieName, '', time()-3600);
     $_SESSION[$this->sessionVariable] = '';
     $this->userData = '';
-    if ( $redirectTo != '' && !headers_sent()){
-	   header('Location: '.$redirectTo );
-	   exit;//To ensure security
-	}
+	$this->userID = '';
+	session_destroy();
   }
   /**
   	* Function to determine if a property is true or false
@@ -260,12 +258,13 @@ class flexibleAccess{
 	  case 'md5' :
 	  	$password = "MD5('".$data[$this->tbFields['pass']]."')";break;
 	  case 'nothing':
-	  	$password = $data[$this->tbFields['pass']];
+		$password = $data[$this->tbFields['pass']];
 	}
     foreach ($data as $k => $v ) $data[$k] = "'".$this->escape($v)."'";
     $data[$this->tbFields['pass']] = $password;
-    $this->query("INSERT INTO `{$this->dbTable}` (`".implode('`, `', array_keys($data))."`) VALUES (".implode(", ", $data).")");
-    return (int)mysql_insert_id($this->dbConn);
+	$query = "INSERT INTO `{$this->dbTable}` (`".implode('`, `', array_keys($data))."`) VALUES (".implode(", ", $data).")";
+    $result_of_query = $this->query($query);
+	return (int)mysql_insert_id($this->dbConn);
   }
   /*
    * Creates a random password. You can use it to create a password or a hash for user activation
@@ -337,7 +336,7 @@ class flexibleAccess{
   */  
   function error($error, $line = '', $die = false) {
     if ( $this->displayErrors )
-    	echo '<b>Error: </b>'.$error.'<br /><b>Line: </b>'.($line==''?'Unknown':$line).'<br />';
+    	//echo '<b>Error: </b>'.$error.'<br /><b>Line: </b>'.($line==''?'Unknown':$line).'<br />';
     if ($die) exit;
     return false;
   }

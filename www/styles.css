@@ -1,40 +1,56 @@
+/* @override http://localhost/walkingtheelderly/trunk/www/styles.css */
+
 body,
 	html {
 		margin:0;
 		padding:0;
 		color:#000;
-		background:#a7a09a;
-	}
+		background: #e9a896;
+	font: 12px Geneva, Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
 	#wrap {
-		width:750px;
+		width:950px;
 		margin:0 auto;
-		background:#99c;
+		background: #fcfcfc;
 	}
 	#header {
     	padding:5px 10px;
-		background:#ddd;
+		background: #e9a896;
 	}
-	h1 {
+	#header h1 {
 	    margin:0;
-    }
+	color: maroon;
+	font: small-caps bold 30px Georgia, "Times New Roman", Times, serif;
+}
 	#main {
 		float:right;
-		width:480px;
-		padding:10px;
-	}
+		padding: 10px 10px 10px 30px;
+			border-left: 3px solid #e9a896;
+	width: 650px;
+}
+
+#sidebar ul {
+	list-style-type: none;
+}
+
+#main h1 {
+	text-decoration: underline;
+	font-size: 18px;
+	color: maroon;
+}
 	h2 {
 		margin:0 0 1em;
 	}
 	#sidebar {
 		float:left;
-		width:230px;
+		width: 220px;
 		padding:10px;
-		background:#99c;
-	}
+		background: #fcfcfc;
+}
 	#footer {
 		clear:both;
 		padding:5px 10px;
-		background:#cc9;
+		background: #e9a896;
 	}
 	#footer p {
 		margin:0;
@@ -42,3 +58,12 @@ body,
 	* html #footer {
 		height:1px;
 	}
+
+#error {
+	font-weight: bold;
+	color: red;
+}
+#notice {
+	font-weight: bold;
+	color: green;
+}

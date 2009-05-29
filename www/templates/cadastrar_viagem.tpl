@@ -1,4 +1,4 @@
-{include file="header.tpl" title=foo}
+{include file="header.tpl"}
 
 <form method="post" action="cadastrar_viagem_submit.php" />
 

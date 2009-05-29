@@ -2,10 +2,13 @@
 
 require 'initialize.inc.php';
 
-$smarty = new Smarty;
-$smarty->compile_check = true;
+if ( !$user->is_loaded() ){
 
-$smarty->assign("php_self", $_SERVER['PHP_SELF']);
+$smarty->assign("title", "Login");
 $smarty->display('login.tpl');
+}else{
+	$smarty->assign("error", 'Você já está logado');
+	$smarty->display('index.tpl');
+}
 
 ?>
