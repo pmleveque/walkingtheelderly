@@ -1,10 +1,10 @@
-{include file="header.tpl" title=login}
+{include file="header.tpl"}
 
-<h1>Login</h1>
+<p>Por enquanto, pode usar: Login: admin / Pass: admin</p>
+
 	<p><form method="post" action="login_submit.php" />
 	 username: <input type="text" name="uname" /><br /><br />
 	 password: <input type="password" name="pwd" /><br /><br />
-	 Remember me? <input type="checkbox" name="remember" value="1" /><br /><br />
 	 <input type="submit" value="login" />
 	</form>
 	</p>

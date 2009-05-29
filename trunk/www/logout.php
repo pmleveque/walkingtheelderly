@@ -2,6 +2,12 @@
 
 require 'initialize.inc.php';
 
-$user->logout();
+if ($user->is_loaded()) {
+	 $user->logout();	
+}
+
+$smarty->display('redirect_home.tpl');
+
+
 
 ?>

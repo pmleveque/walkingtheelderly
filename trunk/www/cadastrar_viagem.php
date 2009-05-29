@@ -6,9 +6,7 @@ if ( $user->is_loaded() ){
 	
 	//TODO: nada aqui...
 	//as modificações tem que ser feitas no arquivo tpl seguinte (é o proprio formulario)
-	$smarty = new Smarty;
-	$smarty->compile_check = true;
-	
+	$smarty->assign("title", "Cadastrar Viagem");
 	$smarty->display('cadastrar_viagem.tpl');
 	
 	}else{
@@ -18,4 +16,3 @@ if ( $user->is_loaded() ){
 
 
 ?>
-	

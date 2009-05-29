@@ -1,6 +1,7 @@
 <?php
 
-error_reporting(E_ALL); 
+ini_set("error_reporting",E_ALL);
+ini_set("display_errors",true);
 
 require 'dbconfig.php'; //retorna a variavel $link
 require 'classes/smarty/Smarty.class.php';
@@ -8,6 +9,9 @@ require 'classes/access.class.php';
 require 'classes/db.class.php';
 
 
+$smarty = new Smarty;
+$smarty->compile_check = true;
+$smarty->assign("name","Walking the Elderly");
 
 
 
@@ -19,7 +23,7 @@ require 'classes/db.class.php';
 $user = new flexibleAccess($link); // var $link definida no arquivo bd.php
 $sqlObj = new db($link, $bdName); // Estancia o objeto SQL
 
-
+$smarty->assign("usuario_logado",$user->is_loaded());
 
 
 

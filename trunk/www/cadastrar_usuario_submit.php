@@ -12,11 +12,14 @@ if (!empty($_POST['username'])){
 	$data = array(
 		'username' => $_POST['username'],
 		'email' => $_POST['email'],
-		'password' => $_POST['pwd'],
+		'password' => $_POST['password'],
 		'active' => 1
 		);
+		
+	$userID = $user->insertUser($data);//The method returns the userID of the new user or 0 if the user is not added
+	
     
-    $data = array(
+    $data2 = array(
         'nome' => $_POST['nome'],
 		'cpf' => $_POST['cpf'],
 		'rg' => $_POST['rg'],
@@ -42,15 +45,22 @@ if (!empty($_POST['username'])){
 		'observacoes2' => $_POST['observacoes2']
     );
     
-	$userID = $user->insertUser($data);//The method returns the userID of the new user or 0 if the user is not added
-	if ($userID==0)
-		echo 'User not registered';//user is already registered or something like that
-	else
-		echo 'User registered with user id '.$userID;
+
+	if ($userID==0){
+		$smarty->assign("error", 'Error: Talvez o usuário já exista, ou o email já está usado...');//user is already registered or something like that
+		
+		$smarty->display('index.tpl');
+		
+	}else {
+		$smarty->display('redirect_home.tpl');
+	}
+
+}else{
+	$smarty->assign("error", 'Faltam informações');//user is already registered or something like that
+	$smarty->display('index.tpl');
 }
 
-//essa função seguinte faz a redireição (desativar para fazer testes)
-header('Location: http://'.$_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF']);
+
 
 
 ?>
