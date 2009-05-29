@@ -52,7 +52,8 @@ if (!empty($_POST['username'])){
 		$smarty->display('index.tpl');
 		
 	}else {
-		$smarty->display('redirect_home.tpl');
+		$smarty->assign("notice", 'Usuário cadastrado com sucesso');//user is already registered or something like that
+		$smarty->display('index.tpl');
 	}
 
 }else{
