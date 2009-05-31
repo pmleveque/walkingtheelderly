@@ -9,8 +9,12 @@ if ( !$user->is_loaded() ) {
 			$smarty->assign("error", 'Wrong username and/or password');
 			$smarty->display('index.tpl');			
 		}else{
+		if ($user->is_admin()==false){
 			//user is now loaded
-			$smarty->display('redirect_home.tpl');
+			$smarty->display('redirect_home.tpl');}
+			else{
+			$smarty->display('redirect_admin_home.tpl');
+			}
 			
 			 
 			
@@ -21,8 +25,13 @@ if ( !$user->is_loaded() ) {
 		$smarty->display('index.tpl');
 	}
 }else{
-	$smarty->assign("error", 'Você já está logado');
-	$smarty->display('index.tpl');
+	if ($user->is_admin()==false){
+		$smarty->assign("error", 'Você já está logado');
+		$smarty->display('index.tpl');
+		}else			 {
+		$smarty->assign("error", 'Admin Você já está logado');
+		$smarty->display('admin.tpl');
+		}
 }
 
 ?>

@@ -5,7 +5,7 @@ ini_set("display_errors",true);
 
 require 'dbconfig.php'; //retorna a variavel $link
 require 'classes/smarty/Smarty.class.php';
-require 'classes/access.class.php';
+require 'classes/accessmod.class.php';
 require 'classes/db.class.php';
 
 
