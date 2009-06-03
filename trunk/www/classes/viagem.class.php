@@ -4,10 +4,19 @@
  * and open the template in the editor.
  */
 
-class class_name {
-    function __construct() {
-        ;
+class viagens {
+
+    //vannucci
+
+    var $CPF = 0;
+
+    function viagens($data) {
+    
+    //$CPF => $data;
+    //
     }
+
+
 
     function exemplo() {
         $sqlObj->query("SELECT * FROM tabela"); // Executa um Select básico
@@ -19,7 +28,7 @@ if ($sqlObj->lin) { // Verifica se o total de resultados é maior que Zero
      echo $resTot[1]['campo']; // Exibe o campo "campo" do segundo resultado da query
 }
     }
-}
+
 
 function consulta_viagem() {
         $sqlObj->query("SELECT * FROM viagem where CPF = "); // SELECT * FROM 'grupo3'.'viagem' WHERE { 'CPF' LIKE ''}
@@ -47,14 +56,19 @@ function cadastra_viagem($data){
   }
 
   function set_acomp_viagem($data){
-    //vannucci no idea naum pode passa 2 argumentos...
+    //vannucci tem q ve a tabela pra v cmo fica a instrucao
+    foreach ($data as $k => $v ) $data[$k] = "'".$this->escape($v)."'";
+    $data[$this->tbFields['viagem']] = viagem;
+	$query = "INSERT INTO `{$this->dbTable}` (`".implode('`, `', array_keys($data))."`) VALUES (".implode(", ", $data).")";
+    $result_of_query = $this->query($query);
+	return (int)mysql_insert_id($this->dbConn);
 	return true;
   }
 
   function get_acomp_viagem($data){
 
     //vannucci tem q ve a tabela pra v cmo fica a instrucao
-    $sqlObj->query("SELECT acomp FROM viagem where CPF = "); // SELECT * FROM 'grupo3'.'viagem' WHERE { 'CPF' LIKE ''}
+    $sqlObj->query("SELECT acomp FROM viagem where CPF = ",CPF); // SELECT * FROM 'grupo3'.'viagem' WHERE { 'CPF' LIKE ''}
         if ($sqlObj->lin) { // Verifica se o total de resultados é maior que Zero
             $res1 = $sqlObj->resultado(0); // Salva o primeiro retorno da query na variavel $res1
             return $res1;
@@ -62,5 +76,5 @@ function cadastra_viagem($data){
             return null;
   }
 
-
+}
 ?>
