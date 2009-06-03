@@ -12,7 +12,7 @@ require 'classes/viagem.class.php';
 
 $smarty = new Smarty;
 $smarty->compile_check = true;
-$smarty->assign("name","Walking the Elderly");
+$smarty->assign("Name","Walking the Elderly");
 
 
 
@@ -22,14 +22,15 @@ $smarty->assign("name","Walking the Elderly");
 /////////////////////////
 
 $user = new flexibleAccess($link); // var $link definida no arquivo bd.php
-$sqlObj = new db($link, $bdName); // Estancia o objeto SQL
-
-
 
 
 
 $smarty->assign("usuario_logado",$user->is_loaded());
 
+
+if($user->is_admin()==true){
+    $admin = new adminclass($link);
+}
 
 
 ?>
