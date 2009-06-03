@@ -10,16 +10,15 @@ if (!empty($_POST['username'])){
 	//Register user:
 	//The logic is simple. We need to provide an associative array, where keys are the field names and values are the values :)
 	$data = array(
-		'username' => $_POST['username'],
-		'email' => $_POST['email'],
-		'password' => $_POST['password'],
-		'active' => 1
+		'userID'=> $_POST['cpf'],
+		'login' => $_POST['username'],
+		'pass' => $_POST['password'],
 		);
-		
-	$userID = $user->insertUser($data);//The method returns the userID of the new user or 0 if the user is not added
-	
+		$cadastro=$user->cadastro($_POST['cpf'],$_POST['username'],$_POST['password'],$_POST['rg'],$_POST['nome'],$_POST['endereco'],$_POST['cidade'],$_POST['estado'],$_POST['bairro'],$_POST['telefone'],$_POST['email'],$_POST['fumo'],$_POST['alcool'],$_POST['observacoes'],$_POST['cpf2']);
+			
     
     $data2 = array(
+		'email' => $_POST['email'],
         'nome' => $_POST['nome'],
 		'cpf' => $_POST['cpf'],
 		'rg' => $_POST['rg'],
@@ -44,16 +43,15 @@ if (!empty($_POST['username'])){
 		'cuidados2' => $_POST['cuidados2'],
 		'observacoes2' => $_POST['observacoes2']
     );
+    
 
-    $userID = $user->insertUserDados($data2);
-
-	if ($userID==0){
-		$smarty->assign("error", 'Error: Talvez o usuário já exista, ou o email já está usado...');//user is already registered or something like that
+	if ($cadastro==false){
+		$smarty->assign("error", 'Erro: Talvez o usuário já exista, ou o email já está usado...');//user is already registered or something like that
 		
 		$smarty->display('index.tpl');
 		
 	}else {
-		$smarty->assign("notice", 'Usuário cadastrado com sucesso');//user is already registered or something like that
+		$smarty->assign("notice", 'Usuário cadastrado com sucesso');//cadastro sussesso
 		$smarty->display('index.tpl');
 	}
 
