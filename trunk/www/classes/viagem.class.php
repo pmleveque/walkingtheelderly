@@ -46,5 +46,21 @@ function cadastra_viagem($data){
 	return (int)mysql_insert_id($this->dbConn);
   }
 
+  function set_acomp_viagem($data){
+    //vannucci no idea naum pode passa 2 argumentos...
+	return true;
+  }
+
+  function get_acomp_viagem($data){
+
+    //vannucci tem q ve a tabela pra v cmo fica a instrucao
+    $sqlObj->query("SELECT acomp FROM viagem where CPF = "); // SELECT * FROM 'grupo3'.'viagem' WHERE { 'CPF' LIKE ''}
+        if ($sqlObj->lin) { // Verifica se o total de resultados é maior que Zero
+            $res1 = $sqlObj->resultado(0); // Salva o primeiro retorno da query na variavel $res1
+            return $res1;
+            }
+            return null;
+  }
+
 
 ?>
