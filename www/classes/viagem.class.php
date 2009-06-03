@@ -10,10 +10,9 @@ class viagens {
 
     var $CPF = 0;
 
-    function viagens($data) {
+    function viagenslist($data) {
     
-    //$CPF => $data;
-    //
+    return
     }
 
 
