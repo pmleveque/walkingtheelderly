@@ -23,11 +23,8 @@ $smarty->assign("name","Walking the Elderly");
 
 $user = new flexibleAccess($link); // var $link definida no arquivo bd.php
 $sqlObj = new db($link, $bdName); // Estancia o objeto SQL
-//vannucci
-<<<<<<< .mine
-$lista_viagens = new $viagens($CPF);
-=======
->>>>>>> .r52
+
+
 
 
 

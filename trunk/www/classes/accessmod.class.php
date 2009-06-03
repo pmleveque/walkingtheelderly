@@ -197,7 +197,7 @@ class flexibleAccess{
     return $this->userData[$property];
   }
   /**
-  	* O usuario é administrador
+  	* O usuario ï¿½ administrador
   	* @return bool
   */
   function is_admin()
@@ -252,7 +252,7 @@ class flexibleAccess{
     return $pwd;
   }
   
-  function cadastro($id,$user,$pass, $RG, $Nome,$end, $Cidade, $Estado, $Bairro, $tel, $email, $fumo, $alcool, $observações, $CPF_idoso){
+  function cadastro($id,$user,$pass, $RG, $Nome,$end, $Cidade, $Estado, $Bairro, $tel, $email, $fumo, $alcool, $observaï¿½ï¿½es, $CPF_idoso){
   $sql = "INSERT INTO `{$this->dbTable}` (CPF,Username,Senha,Admin) VALUES ('".$id."','".$user."','".$pass."',0)";
    $result_of_query = $this->query($sql);
   if (!$result_of_query) {
@@ -260,7 +260,7 @@ class flexibleAccess{
 		}
 
   $sql = "INSERT INTO `{$this->dbTable2}` (CPF,RG,Nome,Endereco,Cidade,Estado,Bairro,Telefone,email,fumo,alcool,observacoes,CPF_Idoso,Numero_endereco) VALUES 
-  ('".$id."','".$RG."','".$Nome."','".$end."','".$Cidade."','".$Estado."','".$Bairro."','".$tel."','".$email."','".$fumo."','".$alcool."','".$observações."','".$CPF_idoso."',123)";
+  ('".$id."','".$RG."','".$Nome."','".$end."','".$Cidade."','".$Estado."','".$Bairro."','".$tel."','".$email."','".$fumo."','".$alcool."','".$observaï¿½ï¿½es."','".$CPF_idoso."',123)";
    $result_of_query = $this->query($sql);
    if (!$result_of_query) {
 		return false;
@@ -328,7 +328,7 @@ class flexibleAccess{
   	* @return bool
   */  
   function error($error, $line = '', $die = false) {
-    if ( $this->displayErrors )
+    if ( $this->displayErrors ){}
     	//echo '<b>Error: </b>'.$error.'<br /><b>Line: </b>'.($line==''?'Unknown':$line).'<br />';
     if ($die) exit;
     return false;
