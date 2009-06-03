@@ -29,10 +29,22 @@ function consulta_viagem() {
             $resTot = $sqlObj->allRes(); // Salva TODA a query na variável $resTot
             // $resTot[A][B] onde A é o id do resultado na query e B é o nome do campo
             echo $resTot[1]['campo']; // Exibe o campo "campo" do segundo resultado da query
+        //vannucci issu num tinha q retorna algo?
+
         }
 
 }
 
+function cadastra_viagem($data){
+    if (!is_array($data)) $this->error('Data is not an array', __LINE__);
+
+    //vannucci tem q ve a tabela pra v cmo fica a instrucao
+    foreach ($data as $k => $v ) $data[$k] = "'".$this->escape($v)."'";
+    $data[$this->tbFields['viagem']] = viagem;
+	$query = "INSERT INTO `{$this->dbTable}` (`".implode('`, `', array_keys($data))."`) VALUES (".implode(", ", $data).")";
+    $result_of_query = $this->query($query);
+	return (int)mysql_insert_id($this->dbConn);
+  }
 
 
 ?>
