@@ -19,6 +19,7 @@ conhecer um pouco sobre ti...
 	CPF: <input type="text" name="cpf" /><br /><br />
 	RG: <input type="text" name="rg" /><br /><br />
 	Endereço: <input type="text" name="endereco" /><br /><br />
+	Numero: <input type="text" name="num" /><br /><br />
 	Cidade: <input type="text" name="cidade" /><br /><br />
 	Estado: <input type="text" name="estado" /><br /><br />
 	Bairro: <input type="text" name="bairro" /><br /><br />
@@ -36,13 +37,14 @@ conhecer um pouco sobre ti...
 	CPF: <input type="text" name="cpf2" /><br /><br />
 	RG: <input type="text" name="rg2" /><br /><br />
 	Endereço: <input type="text" name="endereco2" /><br /><br />
+	Numero: <input type="text" name="num2" /><br /><br />
 	Cidade: <input type="text" name="cidade2" /><br /><br />
 	Estado: <input type="text" name="estado2" /><br /><br />
 	Bairro: <input type="text" name="bairro2" /><br /><br />
 	Telefone: <input type="text" name="telefone2" /><br /><br />
-	Preferencias: <input type="text" name="preferencias2" /><br /><br />
-	Remedios: <input type="text" name="remedios2" /><br /><br />
-	Cuidados Especiais: <input type="text" name="cuidados2" /><br /><br />
+	Fumo?: <input type="text" name="fumo2" /><br /><br />
+	Álcool?: <input type="text" name="alcool2" /><br /><br />
+	email: <input type="text" name="email2" /><br /><br />
 	Observações: <input type="text" name="observacoes2" /><br /><br />
 </p>
 
