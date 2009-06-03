@@ -252,22 +252,29 @@ class flexibleAccess{
     return $pwd;
   }
   
-  function cadastro($id,$user,$pass, $RG, $Nome,$end, $Cidade, $Estado, $Bairro, $tel, $email, $fumo, $alcool, $observa��es, $CPF_idoso){
+
+  function cadastro($id,$user,$pass, $RG, $Nome,$end, $Cidade, $Estado, $Bairro, $tel, $email, $fumo, $alcool, $observacoes, $CPF_idoso,$Nomeidoso,$endidoso,$RGidoso,$Cidadeidoso,$Estadoidoso,$Bairroidoso,$telidoso,$emailidoso,$fumoidoso,$alcoolidoso,$medicamentos){
+
   $sql = "INSERT INTO `{$this->dbTable}` (CPF,Username,Senha,Admin) VALUES ('".$id."','".$user."','".$pass."',0)";
-   $result_of_query = $this->query($sql);
+  $result_of_query = $this->query($sql);
   if (!$result_of_query) {
 		return false;
 		}
 
   $sql = "INSERT INTO `{$this->dbTable2}` (CPF,RG,Nome,Endereco,Cidade,Estado,Bairro,Telefone,email,fumo,alcool,observacoes,CPF_Idoso,Numero_endereco) VALUES 
-  ('".$id."','".$RG."','".$Nome."','".$end."','".$Cidade."','".$Estado."','".$Bairro."','".$tel."','".$email."','".$fumo."','".$alcool."','".$observa��es."','".$CPF_idoso."',123)";
-   $result_of_query = $this->query($sql);
+  ('".$id."','".$RG."','".$Nome."','".$end."','".$Cidade."','".$Estado."','".$Bairro."','".$tel."','".$email."','".$fumo."','".$alcool."','".$observacoes."','".$CPF_idoso."',123)";
+	$result_of_query = $this->query($sql);
    if (!$result_of_query) {
 		return false;
 		}
-   else {
-		return true;
+  $sql = "INSERT INTO `{$this->dbTable3}` (CPF_IDOSO,Nome,Endereco,Numero_endereco,RG,Cidade,Estado,Bairro,Telefone,Email,Fumo,Alcool,Medicamentos) VALUES 
+  ('".$CPF_idoso."','".$Nomeidoso."','".$endidoso."',123,".$RGidoso."','".$Cidadeidoso."','".$Estadoidoso."','".$Bairroidoso."','".$telidoso."','".$emailidoso."','".$fumoidoso."','".$alcoolidoso."','".$medicamentos."')";
+   $result_of_query = $this->query($sql);
+    if (!$result_of_query) {
+		return false;
 		}
+	else {
+	return true;}
  
  }
   
