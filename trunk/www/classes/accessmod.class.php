@@ -196,18 +196,7 @@ class flexibleAccess{
     if (!isset($this->userData[$property])) $this->error('Unknown property <b>'.$property.'</b>', __LINE__);
     return $this->userData[$property];
   }
-  /**
-  	* O usuario � administrador
-  	* @return bool
-  */
-  function is_admin()
- {
-  if (($this->userData[$this->tbFields['ad']])==1){
-    return true;}
-	else{
-	return false;
-	}
-  }
+
   
   /**
    * Is the user loaded?
@@ -216,6 +205,20 @@ class flexibleAccess{
   function is_loaded()
   {
     return empty($this->userID) ? false : true;
+  }
+  
+   /**
+  	* O usuario é administrador?
+  	* @return bool
+  */
+  function is_admin()
+ {
+  if($this->is_loaded()){
+	if (($this->userData[$this->tbFields['ad']])==1){
+    return true;}}
+   else{
+	return false;
+	}
   }
   
   /*
