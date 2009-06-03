@@ -30,6 +30,9 @@ if (!empty($_POST['username'])){
 		'fumo' => $_POST['fumo'],
 		'alcool' => $_POST['alcool'],
 		'observacoes' => $_POST['observacoes'],
+        );
+
+        $data3 = array(
 		'nome2' => $_POST['nome2'],
 		'cpf2' => $_POST['cpf2'],
 		'rg2' => $_POST['rg2'],
@@ -43,7 +46,8 @@ if (!empty($_POST['username'])){
 		'cuidados2' => $_POST['cuidados2'],
 		'observacoes2' => $_POST['observacoes2']
     );
-    
+
+
 
 	if ($cadastro==false){
 		$smarty->assign("error", 'Erro: Talvez o usuário já exista, ou o email já está usado...');//user is already registered or something like that
