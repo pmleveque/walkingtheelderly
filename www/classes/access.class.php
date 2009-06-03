@@ -340,5 +340,23 @@ class flexibleAccess{
     if ($die) exit;
     return false;
   }
+
+  function insertUserDados($data){
+    if (!is_array($data)) $this->error('Data is not an array', __LINE__);
+
+    //vannucci tem q arruma a instrução pra por na tabela
+    foreach ($data as $k => $v ) $data[$k] = "'".$this->escape($v)."'";
+    $data[$this->tbFields['nome']] = $nome;
+	$query = "INSERT INTO `{$this->dbTable}` (`".implode('`, `', array_keys($data))."`) VALUES (".implode(", ", $data).")";
+    $result_of_query = $this->query($query);
+	return (int)mysql_insert_id($this->dbConn);
+  }
+
+
+
+  
+
+
+
 }
 ?>

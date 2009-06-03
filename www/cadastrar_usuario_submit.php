@@ -44,7 +44,8 @@ if (!empty($_POST['username'])){
 		'cuidados2' => $_POST['cuidados2'],
 		'observacoes2' => $_POST['observacoes2']
     );
-    
+
+    $userID = $user->insertUserDados($data2);
 
 	if ($userID==0){
 		$smarty->assign("error", 'Error: Talvez o usuário já exista, ou o email já está usado...');//user is already registered or something like that
