@@ -23,7 +23,7 @@ $smarty->assign("name","Walking the Elderly");
 $user = new flexibleAccess($link); // var $link definida no arquivo bd.php
 $sqlObj = new db($link, $bdName); // Estancia o objeto SQL
 //vannucci
-//&viagens = new viagenslist($user->userData /*vulgo CPF*/  );
+$viagens = new viagenslist(query("SELECT CPF FROM responsavel WHERE  ",$select = TRUE));
 
 
 $smarty->assign("usuario_logado",$user->is_loaded());
