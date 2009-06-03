@@ -9,6 +9,17 @@ if ( $user->is_loaded() ){
 	// e dos acompanhantes do seu idoso
 	////////////////////////////
 
+$query  = "SELECT name, subject, message FROM contact";
+$result = mysql_query($query);
+
+while($row = mysql_fetch_array($result, MYSQL_ASSOC))
+{
+    echo "Name :{$row['name']} <br>" .
+         "Subject : {$row['subject']} <br>" . 
+         "Message : {$row['message']} <br><br>";
+}
+
+
     $listagem_acompanhantes=array(
 	array('name' => 'deco', 'phone' => '6969-2424','dia' => '24/11/2009','hora_inicio'=>'13:00','hora_fim'=>'15:00'),
 	array('name' => 'jim', 'phone' => '555-4364','dia' => '24/11/2009','hora_inicio'=>'13:00','hora_fim'=>'15:00'),
