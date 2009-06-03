@@ -14,8 +14,8 @@
 class adminclass {
     //put your code here
 var $db;
-    function adminclass ($link){
-        $this->db = mysql_select_db($this->dbName, $this->dbConn)or die(mysql_error($this->dbConn));
+    function adminclass (){
+    
 
     }
 
