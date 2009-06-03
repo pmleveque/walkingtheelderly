@@ -48,6 +48,8 @@ class flexibleAccess{
    * var string
    */
   var $dbTable  = 'usuario';
+  var $dbTable2 = 'responsavel';
+  var $dbTable3 = 'idoso';
   /**
    * The session variable ($_SESSION[$sessionVariable]) which will hold the data while the user is logged on
    * var string
@@ -249,6 +251,26 @@ class flexibleAccess{
     }
     return $pwd;
   }
+  
+  function cadastro($id,$user,$pass, $RG, $Nome,$end, $Cidade, $Estado, $Bairro, $tel, $email, $fumo, $alcool, $observações, $CPF_idoso){
+  $sql = "INSERT INTO `{$this->dbTable}` (CPF,Username,Senha,Admin) VALUES ('".$id."','".$user."','".$pass."',0)";
+   $result_of_query = $this->query($sql);
+  if (!$result_of_query) {
+		return false;
+		}
+
+  $sql = "INSERT INTO `{$this->dbTable2}` (CPF,RG,Nome,Endereco,Cidade,Estado,Bairro,Telefone,email,fumo,alcool,observacoes,CPF_Idoso,Numero_endereco) VALUES 
+  ('".$id."','".$RG."','".$Nome."','".$end."','".$Cidade."','".$Estado."','".$Bairro."','".$tel."','".$email."','".$fumo."','".$alcool."','".$observações."','".$CPF_idoso."',123)";
+   $result_of_query = $this->query($sql);
+   if (!$result_of_query) {
+		return false;
+		}
+   else {
+		return true;
+		}
+ 
+ }
+  
   ////////////////////////////////////////////
   // PRIVATE FUNCTIONS
   ////////////////////////////////////////////
@@ -311,5 +333,6 @@ class flexibleAccess{
     if ($die) exit;
     return false;
   }
-}
+
+  }
 ?>
