@@ -268,7 +268,7 @@ class flexibleAccess{
 		return false;
 		}
   $sql = "INSERT INTO `{$this->dbTable3}` (CPF_IDOSO,Nome,Endereco,Numero_endereco,RG,Cidade,Estado,Bairro,Telefone,Email,Fumo,Alcool,Medicamentos) VALUES 
-  ('".$CPF_idoso."','".$Nomeidoso."','".$endidoso."',123,".$RGidoso."','".$Cidadeidoso."','".$Estadoidoso."','".$Bairroidoso."','".$telidoso."','".$emailidoso."','".$fumoidoso."','".$alcoolidoso."','".$medicamentos."')";
+  ('".$CPF_idoso."','".$Nomeidoso."','".$endidoso."',123,'".$RGidoso."','".$Cidadeidoso."','".$Estadoidoso."','".$Bairroidoso."','".$telidoso."','".$emailidoso."','".$fumoidoso."','".$alcoolidoso."','".$medicamentos."')";
    $result_of_query = $this->query($sql);
     if (!$result_of_query) {
 		return false;
