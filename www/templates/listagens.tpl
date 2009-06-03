@@ -1,7 +1,16 @@
 {include file="header.tpl"}
 
-<p>essa pagina contem a listagem dos idosos a cuidar
- e dos acompanhantes do seu idoso</p>
+<table>
+{section name=mysec loop=$acompanhantes}
+{strip}
+   <tr bgcolor="{cycle values="#aaaaaa,#bbbbbb"}">
+      <td>{$acompanhantes[mysec].name}</td>
+      <td>{$acompanhantes[mysec].phone}</td>
+   </tr>
+{/strip}
+{/section}
+</table>
+
 
 
 {include file="footer.tpl"}

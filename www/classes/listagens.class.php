@@ -8,26 +8,33 @@
 
 class listagens {
 
-    //vannucci
+    var $cpf = 0;
 
-    var $CPF = 0;
 
-    function viagens($cfe) {
-    
-    return;
+    var $Data_inicio;
+    var $Data_fim;
+    var $Cidade;
+    var $Estado;
+
+    var $sqlObj;
+
+
+    function listagens($data,$cpf,$sqlObj) {
+
+    $this->sqlObj = $sqlObj;
+    $this->cpf = $cpf;
+
     }
 
 
 
-    function exemplo() {
-        $sqlObj->query("SELECT * FROM tabela"); // Executa um Select básico
-if ($sqlObj->lin) { // Verifica se o total de resultados é maior que Zero
-     $res1 = $sqlObj->resultado(0); // Salva o primeiro retorno da query na variavel $res1
-     echo $res1['campo']; // Exibe o campo "campo" armazenado na variavel $res1
-     $resTot = $sqlObj->allRes(); // Salva TODA a query na variável $resTot
-     // $resTot[A][B] onde A é o id do resultado na query e B é o nome do campo
-     echo $resTot[1]['campo']; // Exibe o campo "campo" do segundo resultado da query
-}
+    function lista_acompanhantes($viagem) {
+        $sqlObj->query("SELECT * FROM viagem where CPF = "); // SELECT * FROM 'grupo3'.'viagem' WHERE { 'CPF' LIKE ''}
+        if ($sqlObj->lin) { // Verifica se o total de resultados é maior que Zero
+            $resTot = $sqlObj->allRes(); // Salva TODA a query na variável $resTot
+            for($i=1;i<=$sqlObj->lin;$i=$i+1){
+                echo $resTot[i];
+            }
     }
 
 
