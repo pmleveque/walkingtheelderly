@@ -12,7 +12,7 @@ if ( $user->is_loaded() ){
         );
 
 
-        $sqlObj->query($sql, $select)
+    //    $viagens->set_acomp_viagem($data);
 
 
     }
