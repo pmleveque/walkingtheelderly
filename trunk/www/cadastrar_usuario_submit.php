@@ -32,6 +32,7 @@ if (!empty($_POST['username'])){
 		'observacoes' => $_POST['observacoes'],
         );
 
+
         $data3 = array(
 		'nome2' => $_POST['nome2'],
 		'cpf2' => $_POST['cpf2'],
