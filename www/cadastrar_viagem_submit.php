@@ -16,7 +16,7 @@ if ( $user->is_loaded() ){
         );
 
 
-        //vannucci num sei c eh aqui
+        /*/vannucci num sei c eh aqui
     $smarty->assign("title", "Busca Acompanhantes");
 
     // assign an array of data
@@ -26,8 +26,8 @@ if ( $user->is_loaded() ){
 
     // display it
     $smarty->display('busca_acomp.tpl');
-        //
-
+        /*/
+$smarty->display('listagens.tpl');
 
     }
 	}else{
