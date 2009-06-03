@@ -340,6 +340,11 @@ class flexibleAccess{
     if ($die) exit;
     return false;
   }
+  
+   function getCPF(){
+   return $this->userID;
+   
+   }
 
   }
 ?>
