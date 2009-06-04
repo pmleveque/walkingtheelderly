@@ -113,11 +113,26 @@ conhecer um pouco sobre ti...
 		<option value="1">1</option>
 	</select><br /><br />
 	email: <input type="text" name="email2" SIZE="46"/><br /><br />
-	medicamentos/observacoes:<br /><textarea name="observacoes2" rows="10" cols="40"></textarea>
-</p>
+	medicamentos/observacoes:<br />
+	<textarea name="observacoes2" rows="10" cols="40">
+	</textarea><br /><br /><br /><br />
+	<p align="center">
+    <textarea rows="10" name="S1" cols="50">
+Termos de uso:
+1) O Usuario deve ser maior de idade.
+2) O Idoso em questão deve ter mais que ??anos.
+3) O sistema fica isento de qualquer eventual problema legal
+4) O sistema não garante que vão existir sempre acompanhantes para cada viagem.
+5) jkapodjkpaskdpaksdpokposakdpoka
+6) kkopkopkopkopkfopkdpogkpodkpkgpodkpok
+7) BlablaBlablaBlablaBlablaBlablaBlabla
+8) naonaoanoanaonoopfifuoisufoiuosufou
+	</textarea><br /><br />
 
-<input type="submit" value="Cadastrar-se" />
-</form>
+<INPUT TYPE=CHECKBOX name="compromisso">SIM, Concordo com os termos descritos acima<P>
+<p align="center">
+<input type="submit" value="Cadastrar-se"/>
 
+</FORM>
 
 {include file="footer.tpl"}
