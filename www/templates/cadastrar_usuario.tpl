@@ -123,10 +123,19 @@ Termos de uso:
 2) O Idoso em questão deve ter mais que ??anos.
 3) O sistema fica isento de qualquer eventual problema legal
 4) O sistema não garante que vão existir sempre acompanhantes para cada viagem.
-5) jkapodjkpaskdpaksdpokposakdpoka
-6) kkopkopkopkopkfopkdpogkpodkpkgpodkpok
-7) BlablaBlablaBlablaBlablaBlablaBlabla
-8) naonaoanoanaonoopfifuoisufoiuosufou
+Ia tsu-tsa, parivikkai vailan,
+Tikkai villan titstandum!
+L'laa dipi depi della ruppathi rupiran,
+Kuriikan kukkaja kirikango!
+Hra-tsa-tsa, ia ripi-dapi dilla
+Barits tad dillan deh lando.
+Aba rippadta parip parii
+Ba ribi, ribi, ribiriz den teahlando.
+Ia barillaz dillan deiallou,
+Ara va reve-reve revydyv dyvjavuo:
+Bariz dah l'llavz dei lando,
+Dabaoke dagae dagae due due dei ia do.
+
 	</textarea><br /><br />
 
 <INPUT TYPE=CHECKBOX name="compromisso">SIM, Concordo com os termos descritos acima<P>
