@@ -50,6 +50,7 @@ class flexibleAccess{
   var $dbTable  = 'usuario';
   var $dbTable2 = 'responsavel';
   var $dbTable3 = 'idoso';
+  var $dbTable4 = 'bloqueio';
   /**
    * The session variable ($_SESSION[$sessionVariable]) which will hold the data while the user is logged on
    * var string
@@ -276,8 +277,16 @@ class flexibleAccess{
     if (!$result_of_query) {
 		return false;
 		}
+	$data = date ( "Y-m-d" );
+	$sql = "INSERT INTO `{$this->dbTable4}` (`MODO_boqueio`, `bloqueado`, `Data`, `username`) 
+	VALUES ('\0', 0,'".$data."' ,'".$id."' )";
+	$result_of_query = $this->query($sql);
+    if (!$result_of_query) {
+		return false;
+		}
 	else {
 	return true;}
+	
  
  }
   
