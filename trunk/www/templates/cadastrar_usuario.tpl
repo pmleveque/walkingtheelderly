@@ -5,9 +5,9 @@
 <h1>Login/senha</h1>
 <p>Escolha um nome de usuário e uma senha para acessar o Walking the Elderly</p>
 <p>	
-	usuario: <input type="text" name="username" /><br /><br />
+	usuario*: <input type="text" name="username" /><br /><br />
 	senha: <input type="password" name="password" /><br /><br />
-	email: <input type="text" name="email" SIZE="46" /><br /><br />
+	email*: <input type="text" name="email" SIZE="46" /><br /><br />
 </p>
 
 <h1>Dados do Responsável</h1>
@@ -15,8 +15,8 @@
 conhecer um pouco sobre ti...
 </p>
 <p>
-	nome: <input type="text" name="nome" SIZE="46"/><br /><br />
-	CPF: <input type="text" name="cpf" />
+	nome*: <input type="text" name="nome" SIZE="46"/><br /><br />
+	CPF*: <input type="text" name="cpf" />
 	RG: <input type="text" name="rg" /><br /><br />
 	Endereço: <input type="text" name="endereco"/> 
 	Numero: <input type="text" name="num" SIZE="5"/><br /><br />
@@ -51,7 +51,7 @@ conhecer um pouco sobre ti...
 		<option value="TO">TO</option>
 	</select>
 	Bairro: <input type="text" name="bairro" /><br /><br />
-	Telefone: <input type="text" name="telefone" />
+	Telefone*: <input type="text" name="telefone" />
 	Fumo?:<select name="fumo" size="1">
 		<option value="0">0</option>
 		<option value="1">1</option>
@@ -67,13 +67,13 @@ conhecer um pouco sobre ti...
 <h1>Dados do Idoso</h1>
 <p>Preencha os dados do seu idoso para que possamos conhece-lo melhor:</p>
 <p>
-	nome: <input type="text" name="nome2" SIZE="46"/><br /><br />
-	CPF: <input type="text" name="cpf2" />
+	nome*: <input type="text" name="nome2" SIZE="46"/><br /><br />
+	CPF*: <input type="text" name="cpf2" />
 	RG: <input type="text" name="rg2" /><br /><br />
-	Endereço: <input type="text" name="endereco2" />
-	Numero: <input type="text" name="num2" SIZE="5" /><br /><br />
-	Cidade: <input type="text" name="cidade2" />
-	Estado: <select name="estado2" size="1">
+	Endereço*: <input type="text" name="endereco2" />
+	Numero*: <input type="text" name="num2" SIZE="5" /><br /><br />
+	Cidade*: <input type="text" name="cidade2" />
+	Estado*: <select name="estado2" size="1">
 		<option value="AC">AC</option>
 		<option value="AL">AL</option>
 		<option value="AP">AP</option>
