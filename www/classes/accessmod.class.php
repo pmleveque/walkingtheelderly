@@ -262,30 +262,29 @@ class flexibleAccess{
   $sql = "INSERT INTO `{$this->dbTable}` (CPF,Username,Senha,Admin) VALUES ('".$id."','".$user."','".$pass."',0)";
   $result_of_query = $this->query($sql);
   if (!$result_of_query) {
-		return false;
+		return 0;
 		}
 
   $sql = "INSERT INTO `{$this->dbTable2}` (CPF,RG,Nome,Endereco,Cidade,Estado,Bairro,Telefone,email,fumo,alcool,observacoes,CPF_Idoso,Numero_endereco) VALUES 
   ('".$id."','".$RG."','".$Nome."','".$end."','".$Cidade."','".$Estado."','".$Bairro."','".$tel."','".$email."','".$fumo."','".$alcool."','".$observacoes."','".$CPF_idoso."','".$num."')";
 	$result_of_query = $this->query($sql);
    if (!$result_of_query) {
-		return false;
+		return 1;
 		}
   $sql = "INSERT INTO `{$this->dbTable3}` (CPF_IDOSO,Nome,Endereco,Numero_endereco,RG,Cidade,Estado,Bairro,Telefone,Email,Fumo,Alcool,Medicamentos) VALUES 
   ('".$CPF_idoso."','".$Nomeidoso."','".$endidoso."','".$num2."','".$RGidoso."','".$Cidadeidoso."','".$Estadoidoso."','".$Bairroidoso."','".$telidoso."','".$emailidoso."','".$fumoidoso."','".$alcoolidoso."','".$medicamentos."')";
    $result_of_query = $this->query($sql);
     if (!$result_of_query) {
-		return false;
+		return 2;
 		}
 	$data = date ( "Y-m-d" );
-	$sql = "INSERT INTO `{$this->dbTable4}` (`MODO_boqueio`, `bloqueado`, `Data`, `username`) 
-	VALUES ('\0', 0,'".$data."' ,'".$id."' )";
+	$sql = "INSERT INTO `{$this->dbTable4}` (`MODO_boqueio`, `bloqueado`, `Data`, `CPF`) VALUES ('\0',0,'".$data."','".$id."')";
 	$result_of_query = $this->query($sql);
     if (!$result_of_query) {
-		return false;
+		return 3;
 		}
 	else {
-	return true;}
+	return 4;}
 	
  
  }
