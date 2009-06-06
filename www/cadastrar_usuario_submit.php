@@ -20,15 +20,15 @@ else if(!(empty($_POST['username']) OR empty($_POST['cpf']) OR empty($_POST['cpf
 		$smarty->display('index.tpl');
 	}	
 	else if ($cadastro==1){
-	$smarty->assign("error", 'Houve um problema no cadastro do responsável');//cadastro sucesso
+	$smarty->assign("error", 'Houve algum problema no cadastro do responsável');//cadastro sucesso
 	$smarty->display('login.tpl');
 	}
 	else if ($cadastro==2){
-	$smarty->assign("error", 'Houve um problema no cadastro do Idoso');//cadastro sucesso
+	$smarty->assign("error", 'Houve algum problema no cadastro do Idoso');//cadastro sucesso
 	$smarty->display('login.tpl');
 	}
 	else if ($cadastro==3){
-	$smarty->assign("error", 'Houve um  problema no bloqueio');//cadastro sucesso
+	$smarty->assign("error", 'Houve um  problema na inserção do bloqueio');//cadastro sucesso
 	$smarty->display('login.tpl');
 	}
 	else {

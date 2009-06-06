@@ -288,6 +288,17 @@ class flexibleAccess{
 	
  
  }
+ 
+ function is_blocked($CPF){
+$res = $this->query("SELECT * FROM `{$this->dbTable4}` 
+		WHERE bloqueado = 0 AND CPF = '$CPF' LIMIT 1",__LINE__);
+ if ( @mysql_num_rows($res) == 0){
+			return true;
+	}
+ else {
+ return false;
+ }
+ }
   
   ////////////////////////////////////////////
   // PRIVATE FUNCTIONS
