@@ -114,7 +114,7 @@ class flexibleAccess{
 	    $this->dbConn = ($dbConn=='')? mysql_connect($this->dbHost.':'.$this->dbPort, $this->dbUser, $this->dbPass):$dbConn;
 	    if ( !$this->dbConn ) die(mysql_error($this->dbConn));
 	    mysql_select_db($this->dbName, $this->dbConn)or die(mysql_error($this->dbConn));
-	    if( !isset( $_SESSION ) ) session_start();
+	    if( !isset( $_SESSION ) ) {session_start();}
 	    if ( !empty($_SESSION[$this->sessionVariable]) )
 	    {
 		    $this->loadUser( $_SESSION[$this->sessionVariable] );

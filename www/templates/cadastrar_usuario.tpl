@@ -1,6 +1,6 @@
 {include file="header.tpl"}
 
-<form method="post" action="cadastrar_usuario_submit.php" />
+<form method="post" action="cadastrar_usuario_submit.php" accept-charset="utf-8"/>
 
 <h1>Login/senha</h1>
 <p>Escolha um nome de usuário e uma senha para acessar o Walking the Elderly</p>
