@@ -18,6 +18,7 @@ class viagem {
 	var $dbTable1 = 'viagem';
 	var $dbUser = 'user';
 	var $dbName = 'grupo3';
+	var $dbConn;
 
  /**
    * Class Constructure
@@ -36,7 +37,7 @@ class viagem {
     $this->Data_fim = $data['datafim'];
     $this->Cidade = $data['cidade' ];
     $this->Estado = $data['estado'];
-	$CPF =$user->__toString($user); 
+	$CPF =$user->__toString(); 
 	
 
     
@@ -64,8 +65,7 @@ function cadastra_viagem($Data_inicio,$Data_fim,$Cidade, $Estado, $userID){
 
  }
  
+
 }
-
-
 
 ?>
