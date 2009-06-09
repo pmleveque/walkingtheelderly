@@ -9,40 +9,60 @@ if ( $user->is_loaded() ){
 	// e dos acompanhantes do seu idoso
 	////////////////////////////
 
-$query  = "SELECT name, subject, message FROM contact";
-$result = mysql_query($query);
 
-while($row = mysql_fetch_array($result, MYSQL_ASSOC))
+
+// $query  = "SELECT name, subject, message FROM contact";
+// $result = mysql_query($query);
+// 
+// while($row = mysql_fetch_array($result))
+// {
+//     echo "Name :{$row['name']} <br>" .
+//          "Subject : {$row['subject']} <br>" . 
+//          "Message : {$row['message']} <br><br>";
+// }
+
+
+
+/* Cuidado... por enquanto o sistema lista todos os usuários
+Não implementei o algoritmo que faz o cruzamento e mostra os viagens... */
+
+//responsáveis
+$query  = "SELECT * FROM  `responsavel`";
+$result = mysql_query($query);
+$listagem_acompanhantes=array();
+while($row = mysql_fetch_array($result))
 {
-    echo "Name :{$row['name']} <br>" .
-         "Subject : {$row['subject']} <br>" . 
-         "Message : {$row['message']} <br><br>";
+    $listagem_acompanhantes[] = array('name' => $row['Nome'], 'phone' => $row['Telefone'],'dia' => '24/11/2009', 'hora_inicio'=>'13:00', 'hora_fim'=>'15:00');
 }
 
 
-    $listagem_acompanhantes=array(
-	array('name' => 'deco', 'phone' => '6969-2424','dia' => '24/11/2009','hora_inicio'=>'13:00','hora_fim'=>'15:00'),
-	array('name' => 'jim', 'phone' => '555-4364','dia' => '24/11/2009','hora_inicio'=>'13:00','hora_fim'=>'15:00'),
-	array('name' => 'joe', 'phone' => '555-3422','dia' => '24/11/2009','hora_inicio'=>'13:00','hora_fim'=>'15:00'),
-	array('name' => 'jerry', 'phone' => '555-4973','dia' => '24/11/2009','hora_inicio'=>'13:00','hora_fim'=>'15:00'),
-	array('name' => 'fred', 'phone' => '555-3235','dia' => '24/11/2009','hora_inicio'=>'13:00','hora_fim'=>'15:00')
-	);
 
-    $listagem_idosos=array(
-	array('name' => 'deco', 'dia' => '24/11/2009','cidade'=>'curitiba','hora_inicio'=>'13:00','hora_fim'=>'15:00'),
-	array('name' => 'pierre', 'dia' => '14/10/2009','cidade'=>'curitiba','hora_inicio'=>'7:00','hora_fim'=>'10:00'),
-    array('name' => 'uhu', 'dia' => '2/2/2010','cidade'=>'sp','hora_inicio'=>'13:00','hora_fim'=>'15:00'),
-    array('name' => 'pauleta', 'dia' => '24/11/2011','cidade'=>'sp','hora_inicio'=>'13:00','hora_fim'=>'15:00'),
-	);
+//idosos
+$query  = "SELECT * FROM  `idoso`";
+$result = mysql_query($query);
+$listagem_idosos=array();
+while($row = mysql_fetch_array($result))
+{
+    $listagem_idosos[] = array('name' => $row['Nome'], 'dia' => '24/11/2009','cidade'=>'curitiba','hora_inicio'=>'13:00','hora_fim'=>'15:00');
+}
+
+
+
+
+/* Cuidado... por enquanto o sistema lista todos os usuários
+Não implementei o algoritmo que faz o cruzamento e mostra os viagens... */
+$smarty->assign("notice", 'Cuidado: por enquanto o sistema lista todos os usuários <br>
+TODO1:  implementar o algoritmo que mostro os responsaveis e idosos certos <br>
+TODO2:  mostrar a data e horário certo <br>
+TODO3:  implementar a modificação de status <br>
+TODO4:  implementar a funcão: fim e assente');
+
+
 	
 	$smarty->assign("acompanhantes", $listagem_acompanhantes);
 	$smarty->assign("idosos", $listagem_idosos);
 	$smarty->assign("title", "Listagem dos idosos e acompanhantes");
 	$smarty->display('listagens.tpl');
-
-
-	
-
 
 }else{
 	// neste caso, o usuario não é logado... ele precisa se logar:
