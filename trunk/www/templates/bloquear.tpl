@@ -1,27 +1,29 @@
 {include file="header_admin.tpl"}
 
-<form action="bloquear.php" method="get" accept-charset="utf-8">
-	<label for="">Digite o nome do usuário: </label><input type="text" name="pesquisa" value="" id="">
-	
-	<p><input type="submit" value="Procurar &rarr;"></p>
-</form>
 
-<form action="bloquear.php" method="get" accept-charset="utf-8">
-	
-	<!-- incluir aqui a listagem resultado da pesquisa -->
-	
-	<label for="bloquear_por">Bloquear por</label>
-	
-	<select name="bloquear_por" id="bloquear_por" multiple onchange="" size="1">
-		<option value="7dias">7dias</option>
-		<option value="15dias">15dias</option>
-		<option value="30dias">30dias</option>
-		<option value="sempre">sempre</option>
-		
-	</select>
-	
-	<p><input type="submit" value="Bloquear &rarr;"></p>
-</form>
+
+<table>
+	<tr>
+		<th>Nome</th>
+	      <th>CPF</th>
+	      <th>Email</th>
+	      <th>Bloquear por</th>
+	      
+	</tr>
+{section name=elt loop=$listagem}
+{strip}
+   <tr bgcolor="{cycle values="#fafafa,#ffffff"}">
+      <td>{$listagem[elt].name}</td>
+      <td>{$listagem[elt].cpf}</td>
+      <td>{$listagem[elt].email}</td>		
+      <td><a href="bloquear_submit.php?cpf={$listagem[elt].cpf}&tempo=7dias">7dias </a>&nbsp;
+          <a href="bloquear_submit.php?cpf={$listagem[elt].cpf}&tempo=15dias">15dias</a>&nbsp;
+          <a href="bloquear_submit.php?cpf={$listagem[elt].cpf}&tempo=30dias">30dias</a>&nbsp;
+          <a href="bloquear_submit.php?cpf={$listagem[elt].cpf}&tempo=sempre">sempre</a></td>
+   </tr>
+{/strip}
+{/section}
+</table>
 
 
 {include file="footer.tpl"}
