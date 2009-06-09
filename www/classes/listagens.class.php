@@ -36,7 +36,7 @@ class listagens {
                 echo $resTot[i];
             }
     }
-
+}
 
 function consulta_viagem() {
         $sqlObj->query("SELECT * FROM viagem where CPF = "); // SELECT * FROM 'grupo3'.'viagem' WHERE { 'CPF' LIKE ''}
@@ -55,6 +55,16 @@ function consulta_viagem() {
         }
 
 }
+
+/*function consulta_viagens2($CPF){
+ $this->CPF = $user;
+ $this->sqlObj= new db($link,$dbName);
+ $sql = "SELECT * FROM `{$this->dbTable1}` where CPF like $CPF";
+ $result_of_query = ($this->sqlObj)->query($sql);
+ $data=($this->sqlObj)->allRes($result_of_query);
+ ($this->sqlObj)->fecha();
+ return $data;
+ }*/
 
 function cadastra_viagem($data){
     if (!is_array($data)) $this->error('Data is not an array', __LINE__);
