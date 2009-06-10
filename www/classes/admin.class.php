@@ -13,7 +13,7 @@
 
 class adminclass {
     //put your code here
-var $db;
+var $dbTable1 = 'log';
     function adminclass (){
     
 
@@ -30,7 +30,9 @@ var $db;
     }
 
     function fazerlog($titulo, $descricao){
-
+	$sql = "INSERT INTO `{$this->dbTable1}` (titulo,log) VALUES ('".$titulo."','".$descricao."')";
+	$result = mysql_query($sql);
+	return $result;
     }
 }
 
