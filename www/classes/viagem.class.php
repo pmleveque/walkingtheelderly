@@ -33,7 +33,7 @@ function viagem($Data_inicio,$Data_fim,$Cidade,$Estado, $CPF){
     $this->Cidade = $Cidade;
     $this->Estado = $Estado;
 
-  $sql = "INSERT INTO `{$this->dbTable1}` (Data_inicio,Data_fim,CPF,Cidade,Estado,feedback_idoso,feedback_acompanhante) VALUES ('".$Data_inicio."','".$Data_fim."','".$CPF."','".$Cidade."','".$Estado."',NULL,3)";
+  $sql = "INSERT INTO `{$this->dbTable1}` (Data_inicio,Data_fim,CPF,Cidade,Estado,feedback_idoso,feedback_acompanhante,status) VALUES ('".$Data_inicio."','".$Data_fim."','".$CPF."','".$Cidade."','".$Estado."',NULL,NULL,0)";
    $result = mysql_query($sql);
   return $result;
 
