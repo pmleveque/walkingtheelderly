@@ -10,6 +10,8 @@ while($row = mysql_fetch_array($result, MYSQL_ASSOC))
 {
     echo "Data fim :{$row['Data_fim']} <br>" .
          "Data inicio : {$row['Data_inicio']} <br>" . 
+		 "CPF : {$row['CPF']}<br>".
+		 "Status:{$row['status']}<br>".
          "Cidade : {$row['Cidade']} <br><br>";
 }
 	//TODO: nada aqui...
