@@ -6,12 +6,13 @@ require 'initialize.inc.php';
 		
 		
 		//listagem
-		$query  = "SELECT * FROM  `responsavel`";   /*Modificar o query para mostrar só os que são bloqueados */
+		$query  = "SELECT R.Nome,R.CPF, B.MODO_boqueio, B.Data FROM  bloqueio B,usuario U,responsavel R WHERE U.CPF=B.CPF AND R.CPF=U.CPF AND B.bloqueado=1";   /*Modificar o query para mostrar só os que são bloqueados */
 		$result = mysql_query($query);
 		$listagem_responsavel=array();
 		while($row = mysql_fetch_array($result))
 		{
-		    $listagem_responsavel[] = array('name' => $row['Nome'],'cpf' => $row['CPF']);
+		
+		    $listagem_responsavel[] = array('name' => $row['Nome'],'cpf' => $row['CPF'],'tempo block' => $row['MODO_boqueio'],'data inicio' => $row['Data']);
 		}
 		
 		$smarty->assign('notice',"TODO1: Modificar o query para mostrar só os que são bloqueados <br>
