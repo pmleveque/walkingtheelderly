@@ -4,7 +4,7 @@ require 'initialize.inc.php';
 		
 		$var=$admin->fazerlog($_POST['titulo_manutencao'],$_POST['descricao']);
 		if($var==true){
-			$smarty->assign("error", "Log cadastrado");
+			$smarty->assign("notice", "Log cadastrado");
 			$smarty->display('registro.tpl');
 			}
 		else{
