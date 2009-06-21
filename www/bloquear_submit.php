@@ -6,7 +6,7 @@ require 'initialize.inc.php';
 		
 		
 		
-		$var=$admin->bloquear($_POST['cpf'],$_POST['tempo']);
+		$var=$admin->bloquear($_GET['cpf'],$_GET['tempo']);
 		if($var==true){
 			$smarty->assign("notice", "Usuario bloqueado");
 			$smarty->display('bloquear.tpl');

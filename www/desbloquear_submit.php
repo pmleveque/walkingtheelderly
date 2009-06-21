@@ -6,7 +6,7 @@ require 'initialize.inc.php';
 		
 		
 		
-		$var=$admin->desbloquear($_POST['cpf']);
+		$var=$admin->desbloquear($_GET['cpf']);
 		if($var==true){
 			$smarty->assign("notice", "Usuario desbloqueado");
 			$smarty->display('desbloquear.tpl');
