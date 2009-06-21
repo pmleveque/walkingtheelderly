@@ -20,11 +20,11 @@ require 'initialize.inc.php';
 		$var=$admin->bloquear($_POST['cpf'],$tempo);
 		if($var==true){
 			$smarty->assign("notice", "Usuario bloqueado");
-			$smarty->display('bloqueio.tpl');
+			$smarty->display('bloquear.tpl');
 			}
 		else{
 			$smarty->assign("error", "Houve um problema no cadastro");
-			$smarty->display('bloqueio.tpl');
+			$smarty->display('bloquear.tpl');
 		}
 		
 		}

@@ -5,7 +5,7 @@ require 'initialize.inc.php';
 		
 		
 		//listagem
-		$query  = "SELECT * FROM  `responsavel`";  /*Modificar o query para NAO mostrar só os que bloqueados */
+		$query  = "SELECT R.Nome,R.CPF, B.MODO_boqueio, B.Data FROM  bloqueio B,usuario U,responsavel R WHERE U.CPF=B.CPF AND R.CPF=U.CPF AND B.bloqueado=0";  /*Modificar o query para NAO mostrar só os que bloqueados */
 		$result = mysql_query($query);
 		$listagem_responsavel=array();
 		while($row = mysql_fetch_array($result))
