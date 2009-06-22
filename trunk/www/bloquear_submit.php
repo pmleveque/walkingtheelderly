@@ -2,7 +2,6 @@
 require 'initialize.inc.php';
 	if ($user->is_admin()==true ){
 		
-		$smarty->assign("title", "Pagina de Bloqueio");/*admin ok*/
 		
 		
 		
