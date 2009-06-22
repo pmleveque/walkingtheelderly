@@ -15,8 +15,7 @@ require 'initialize.inc.php';
 		    $listagem_responsavel[] = array('name' => $row['Nome'],'cpf' => $row['CPF'],'tempo_block' => $row['MODO_boqueio'],'data_inicio' => $row['Data'],'email' => $row['email']);
 		}
 		
-		$smarty->assign('notice',"TODO1: Modificar o query para mostrar só os que são bloqueados <br>
-		TODO2: precisa criar a pagina debloquear_submit que recebe o cpf do usuario a ser desbloqueado");
+		
 		
 		$smarty->assign('listagem',$listagem_responsavel);		
 		$smarty->display('desbloquear.tpl');

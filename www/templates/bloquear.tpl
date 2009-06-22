@@ -1,6 +1,6 @@
 {include file="header_admin.tpl"}
 
-
+<p>Lista de usuários que podem ser bloqueados:</p>
 
 <table>
 	<tr>
