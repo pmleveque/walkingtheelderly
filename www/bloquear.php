@@ -13,8 +13,7 @@ require 'initialize.inc.php';
 		    $listagem_responsavel[] = array('name' => $row['Nome'],'cpf' => $row['CPF'],'email' => $row['email']);
 		}
 		
-		$smarty->assign('notice',"TODO1: Modificar o query para não mostrar os que já são bloqueados <br>
-		TODO2: precisa criar a pagina bloquear_submit que recebe (por exemplo): <br> bloquear_submit.php?cpf=116516&tempo=7dias");
+		
 		
 		$smarty->assign('listagem',$listagem_responsavel);
 		$smarty->display('bloquear.tpl');
