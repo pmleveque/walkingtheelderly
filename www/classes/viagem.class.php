@@ -62,7 +62,7 @@ return $consulta;
 function inicializadisponivel(){
 $Data_inicio=$this->Data_inicio;
 $Data_fim=$this->Data_fim;
-$Id_viagem=this->getviagem();
+$Id_viagem=$this->getviagem();
 $sql = "INSERT INTO `{$this->dbTable1}` (datainicio,datafim,Id_viagem) VALUES ('".$Data_inicio."','".$Data_fim."','".$Id_viagem."')";
 $result = mysql_query($sql); 
 return $result;
