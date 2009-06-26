@@ -6,7 +6,8 @@
 	<tr>
 		<th>Nome</th>
 	      <th>Phone</th>
-	      <th>Dia</th>
+	      <th>Cidade</th>
+		  <th>Dia</th>
 	      <th>Status</th>
 	      <th>Feedback</th>
 	</tr>
@@ -15,6 +16,7 @@
    <tr bgcolor="{cycle values="#fafafa,#ffffff"}">
       <td>{$acompanhantes[acomp].name}</td>
       <td>{$acompanhantes[acomp].phone}</td>
+	  <td>{$acompanhantes[acomp].Cidade}</td>
       <td>{$acompanhantes[acomp].dia}<br />
       {$acompanhantes[acomp].hora_inicio}
       {$acompanhantes[acomp].hora_fim}</td>
