@@ -55,7 +55,7 @@ while($row = mysql_fetch_array($result))
 /* Cuidado... por enquanto o sistema lista todos os usuários
 Não implementei o algoritmo que faz o cruzamento e mostra os viagens... */
 $smarty->assign("notice", 'Cuidado: por enquanto o sistema lista todos os usuários <br>
-TODO1:  implementar o algoritmo que mostro os responsaveis e idosos certos <br>
+TODO1:  implementar o algoritmo que mostre os responsaveis <br>
 TODO2:  mostrar a data e horário certo <br>
 TODO3:  implementar a modificação de status <br>
 TODO4:  implementar a funcão: fim e assente');
