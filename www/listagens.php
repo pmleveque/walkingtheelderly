@@ -28,12 +28,12 @@ Não implementei o algoritmo que faz o cruzamento e mostra os viagens... */
 //duvida fazer uma lista dessa para cada viagem????????
 //responsáveis
 $data = date ( "Y-m-d" );// verificação para mostrar somente as viagens que não aconteceram ainda
-$query  = "SELECT R.Telefone,R.Nome,R.CPF,R.email, B.MODO_boqueio, B.Data, V.Cidade FROM  bloqueio B,usuario U,responsavel R, viagem V WHERE U.CPF=B.CPF AND R.CPF=U.CPF AND V.CPF=R.CPF AND B.bloqueado=0 AND Data_inicio > '".$data."'";
+$query  = "SELECT V.Data_inicio,V.Data_fim,V.Estado,R.Telefone,R.Nome,R.CPF,R.email, B.MODO_boqueio, B.Data, V.Cidade FROM  bloqueio B,usuario U,responsavel R, viagem V WHERE U.CPF=B.CPF AND R.CPF=U.CPF AND V.CPF=R.CPF AND B.bloqueado=0 AND Data_inicio > '".$data."'";
 $result = mysql_query($query);
 $listagem_acompanhantes=array();
 while($row = mysql_fetch_array($result))
 {
-    $listagem_acompanhantes[] = array('name' => $row['Nome'], 'phone' => $row['Telefone'],'Cidade'=>$row['Cidade'],'dia' => '24/11/2009', 'hora_inicio'=>'13:00', 'hora_fim'=>'15:00');
+    $listagem_acompanhantes[] = array('name' => $row['Nome'], 'phone' => $row['Telefone'],'Cidade'=>$row['Cidade'],'Estado' => $row['Estado'],'dia1' => $row['Data_inicio'],'dia2' => $row['Data_fim']);
 }
 
 
