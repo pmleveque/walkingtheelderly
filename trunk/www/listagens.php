@@ -44,7 +44,7 @@ $result = mysql_query($query);
 $listagem_idosos=array();
 while($row = mysql_fetch_array($result))
 {
-    $listagem_idosos[] = array('name' => $row['Nome'], 'dia' => '24/11/2009','cidade'=>'curitiba','hora_inicio'=>'13:00','hora_fim'=>'15:00');
+    $listagem_idosos[] = array('name' => $row['Nome'], 'dia1' => '24/11/2009','dia2' => '25/11/2009','cidade'=>$row['Cidade'],'estado'=>$row['Estado'],'endereco'=>$row['Endereco']/*$row['Endereco']*/,'numero_endereco'=>$row['Numero_endereco']);
 }
 
 
