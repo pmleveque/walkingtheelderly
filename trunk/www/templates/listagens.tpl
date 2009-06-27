@@ -6,8 +6,10 @@
 	<tr>
 		<th>Nome</th>
 	      <th>Phone</th>
-	      <th>Cidade</th>
-		  <th>Dia</th>
+	      <th>Cidade<br />
+		  Estado</th>
+		  <th>Periodo<br />
+		  Ano-mes-dia</th>
 	      <th>Status</th>
 	      <th>Feedback</th>
 	</tr>
@@ -16,10 +18,10 @@
    <tr bgcolor="{cycle values="#fafafa,#ffffff"}">
       <td>{$acompanhantes[acomp].name}</td>
       <td>{$acompanhantes[acomp].phone}</td>
-	  <td>{$acompanhantes[acomp].Cidade}</td>
-      <td>{$acompanhantes[acomp].dia}<br />
-      {$acompanhantes[acomp].hora_inicio}
-      {$acompanhantes[acomp].hora_fim}</td>
+	  <td>{$acompanhantes[acomp].Cidade}<br />
+	  {$acompanhantes[acomp].Estado}</td>
+      <td>inicio:{$acompanhantes[acomp].dia1}<br />
+      fim:{$acompanhantes[acomp].dia2}</td>
 	  <td>
 		<form action="status.php" method="get" accept-charset="utf-8">
 			<select name="status" size="1">
@@ -45,8 +47,8 @@
 <table>
 	<tr>
 		<th>Nome</th>
-	      <th>Dia inicio</th>
-		  <th>Dia fim</th>
+	      <th>Dia inicio<br />
+		  Dia fim</th>
 	      <th>Localização</th>
 	<th>Feedback</th>
 	</tr>
@@ -54,8 +56,8 @@
 {strip}
    <tr bgcolor="{cycle values="#fafafa,#ffffff"}">
       <td>{$idosos[idoso].name}</td>
-      <td>{$idosos[idoso].dia1}</td>
-	  <td>{$idosos[idoso].dia2}</td>
+      <td>{$idosos[idoso].dia1}<br />
+	  {$idosos[idoso].dia2}</td>
       <td>Cidade:{$idosos[idoso].cidade}<br />
 	  Estado:{$idosos[idoso].estado}<br />
 	  Endereço:{$idosos[idoso].endereco},nº{$idosos[idoso].numero_endereco}</td>

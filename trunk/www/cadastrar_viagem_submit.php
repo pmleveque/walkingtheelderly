@@ -6,8 +6,8 @@ if ( $user->is_loaded() ){
 	if (!(empty($_POST['anoinicio']) OR empty($_POST['mesinicio']) OR empty($_POST['diainicio']) OR empty($_POST['cidade']) OR empty($_POST['diafim'])OR empty($_POST['mesfim']) OR empty($_POST['anofim']))){
 	
 
-		$inicio = $_POST['anoinicio'].$_POST['mesinicio'].$_POST['diainicio'];
-		$fim =  $_POST['anofim'].$_POST['mesfim'].$_POST['diafim'];
+		$inicio = $_POST['anoinicio']."-".$_POST['mesinicio']."-".$_POST['diainicio'];
+		$fim =  $_POST['anofim']."-".$_POST['mesfim']."-".$_POST['diafim'];
 		$cidade=$_POST['cidade'];
 		$estado=$_POST['estado'];
 		
