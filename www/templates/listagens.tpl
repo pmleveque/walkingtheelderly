@@ -45,20 +45,20 @@
 <table>
 	<tr>
 		<th>Nome</th>
-	      <th>Dia</th>
-	      <th>Cidade</th>
-	      <th>Inicio</th>
-	      <th>Fim</th>
+	      <th>Dia inicio</th>
+		  <th>Dia fim</th>
+	      <th>Localização</th>
 	<th>Feedback</th>
 	</tr>
 {section name=idoso loop=$idosos}
 {strip}
    <tr bgcolor="{cycle values="#fafafa,#ffffff"}">
       <td>{$idosos[idoso].name}</td>
-      <td>{$idosos[idoso].dia}</td>
-      <td>{$idosos[idoso].cidade}</td>
-      <td>{$idosos[idoso].hora_inicio}</td>
-      <td>{$idosos[idoso].hora_fim}</td>
+      <td>{$idosos[idoso].dia1}</td>
+	  <td>{$idosos[idoso].dia2}</td>
+      <td>Cidade:{$idosos[idoso].cidade}<br />
+	  Estado:{$idosos[idoso].estado}<br />
+	  Endereço:{$idosos[idoso].endereco},nº{$idosos[idoso].numero_endereco}</td>
         <td><a href="feedback.php?idoso={$idosos[idoso].CPF}">Feedback</a></td>
    </tr>
 {/strip}
