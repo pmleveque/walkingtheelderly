@@ -7,20 +7,17 @@
 
 
 class viagens{
-    //vannucci
-
-    var $sqlObj;
 
 
-    function viagem($sqlObj,$user,$data) {
-
-    $this->sqlObj = $sqlObj;
-    $this->data = $data;
-    $this->user = $CPF;
+    var $CPF;
+	
 
 
-    //$CPF => $data;
-    //
+    function viagens($user) {
+
+    $this->CPF = $user;
+
+
     }
 
 
@@ -47,6 +44,18 @@ function consulta_viagem() {
 }
 
 
+function getUserViagens(){
+$ID=$this->CPF;
+$data = date ( "Y-m-d" );
+$sql ="SELECT * FROM viagem  WHERE CPF='".$ID."' AND Data_inicio > '".$data."' AND status='0'";//seleciona todas as viagens  
+$result = mysql_query($sql);
+$listagem=array();
+while($row = mysql_fetch_array($result))
+{
+    $listagem[] = array('Id' =>$row['Id_viagem'], 'cidade'=>$row['Cidade']);
+}
+return $listagem;
+} 
 
 }
 ?>
