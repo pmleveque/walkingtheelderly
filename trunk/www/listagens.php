@@ -65,15 +65,21 @@ if ($action=$_GET['action']) {
 /* Cuidado... por enquanto o sistema lista todas as viagens cuja data de inicio não expirou
 Não implementei o algoritmo que faz o cruzamento e mostra os viagens... */
 //duvida fazer uma lista dessa para cada viagem????????
+
+$viagens= new viagens($current_user);
+$listagem_viagens = array(); 
+$listagem_viagens = $viagens->getUserViagens();
+
 //Acompanhantes
 $data = date ( "Y-m-d" );// verificação para mostrar somente as viagens que não aconteceram ainda
-$query  = "SELECT V.Data_inicio,V.Data_fim,V.Estado,R.Telefone,R.Nome,R.CPF,R.email, B.MODO_boqueio, B.Data, V.Cidade FROM  bloqueio B,usuario U,responsavel R, viagem V WHERE U.CPF=B.CPF AND R.CPF=U.CPF AND V.CPF=R.CPF AND B.bloqueado=0 AND Data_inicio > '".$data."'";
+$query  = "SELECT T.datainicio, T.datafim, V.Estado, R.Telefone, R.Nome, R.CPF, R.email, B.MODO_boqueio, B.Data, V.Cidade FROM  bloqueio B,usuario U,responsavel R, viagem V, tempodisponivel T WHERE U.CPF=B.CPF AND R.CPF=U.CPF AND V.CPF=R.CPF AND V.Id_viagem=T.Id_viagem AND B.bloqueado=0 AND T.datainicio > '".$data."'";
 // essa query retorna todos as viagens cadastradas de responsaveis que não estão bloqueados
 $result = mysql_query($query);
 $listagem_acompanhantes=array();
 while($row = mysql_fetch_array($result))
 {
-    $listagem_acompanhantes[] = array('name' => $row['Nome'], 'CPF' => $row['CPF'], 'phone' => $row['Telefone'],'Cidade'=>$row['Cidade'],'Estado' => $row['Estado'],'dia1' => $row['Data_inicio'],'dia2' => $row['Data_fim']);
+
+    $listagem_acompanhantes[] = array('name' => $row['Nome'], 'phone' => $row['Telefone'],'Cidade'=>$row['Cidade'],'Estado' => $row['Estado'],'dia1' => $row['datainicio'],'dia2' => $row['datafim']);
 }
 
 
@@ -85,7 +91,7 @@ $result = mysql_query($query);
 $listagem_idosos=array();
 while($row = mysql_fetch_array($result))
 {
-    $listagem_idosos[] = array('name' => $row['Nome'], 'CPF' => $row['CPF'],  'dia1' => $row['datainicio'],'dia2' => $row['datafim'],'cidade'=>$row['Cidade'],'estado'=>$row['Estado'],'endereco'=>$row['Endereco']/*$row['Endereco']*/,'numero_endereco'=>$row['Numero_endereco']);
+   $listagem_idosos[] = array('name' => $row['Nome'], 'dia1' => $row['datainicio'],'dia2' => $row['datafim'],'cidade'=>$row['Cidade'],'estado'=>$row['Estado'],'endereco'=>$row['Endereco']/*$row['Endereco']*/,'numero_endereco'=>$row['Numero_endereco']);
 }
 
 
@@ -103,6 +109,7 @@ TODO4:  implementar a funcão: fim e assente');
 	
 	$smarty->assign("acompanhantes", $listagem_acompanhantes);
 	$smarty->assign("idosos", $listagem_idosos);
+	$smarty->assign("viagens", $listagem_viagens);
 	$smarty->assign("title", "Listagem dos idosos e acompanhantes");
 	$smarty->display('listagens.tpl');
 
