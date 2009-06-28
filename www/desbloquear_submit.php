@@ -8,16 +8,16 @@ require 'initialize.inc.php';
 		$var=$admin->desbloquear($_GET['cpf']);
 		if($var==true){
 			$smarty->assign("notice", "Usuario desbloqueado");
-			$smarty->display('desbloquear.tpl');
+			$smarty->display('admin.tpl');
 			}
 		else{
 			$smarty->assign("error", "Houve um problema no cadastro");
-			$smarty->display('desbloquear.tpl');
+			$smarty->display('admin.tpl');
 		}
 		
 		}
 	else{
-		$smarty->assign("error", "Acesso negado login necessario");/*alguem tentou acessar diretamente a pagina do administrador*/
-		$smarty->display('login.tpl');}
+		$smarty->assign("error", "Acesso negado login admin necessario");/*alguem tentou acessar diretamente a pagina do administrador*/
+		$smarty->display('index.tpl');}
 ?>
 
