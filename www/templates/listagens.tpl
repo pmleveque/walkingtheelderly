@@ -1,6 +1,6 @@
 {include file="header.tpl"}
 
-<h1 id="viagens">Viagens</h1>
+<h1 id="viagens">Viagens e acompanhantes possíveis</h1>
 
 <table>
 	

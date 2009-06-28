@@ -116,7 +116,7 @@ TODO4:  implementar a funcão: fim e assente');
 	$smarty->assign("acompanhantes", $listagem_acompanhantes);
 	$smarty->assign("idosos", $listagem_idosos);
 	$smarty->assign("viagens", $listagem_viagens);
-	$smarty->assign("title", "Listagem dos idosos e acompanhantes");
+	$smarty->assign("title", "Listagens do usuario");
 	$smarty->display('listagens.tpl');
 
 }else{
