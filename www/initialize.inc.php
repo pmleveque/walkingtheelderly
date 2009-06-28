@@ -8,6 +8,7 @@ require 'classes/smarty/Smarty.class.php';
 require 'classes/accessmod.class.php';
 require 'classes/db.class.php';
 require 'classes/viagem.class.php';
+require 'classes/viagens.class.php';
 require 'classes/usuario.class.php';
 require 'classes/admin.class.php';
 require 'classes/listagens.class.php';
