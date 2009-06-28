@@ -10,6 +10,45 @@ if ( $user->is_loaded() ){
 	////////////////////////////
 
 
+/* Tratamento dos dados do formulário */
+if ($action=$_GET['action']) {
+	$cpf_acompanhante = $_GET['acompanhante'];
+	switch ($action) {
+		case 'status':
+		
+		switch ($_GET['status']) {
+			case 'talvez':
+			# code... slq query
+			break;
+			case 'confirmado':
+			# code...
+			break;				
+			case 'nao':
+			# code...
+			break;			
+			default:
+			# code...
+			break;
+		}		
+		break;
+
+		case 'fim':
+		# code...
+		break;
+
+		case 'ausente':
+		# code...
+		break;
+
+
+		default:
+		# code...
+		break;
+	}
+}
+
+
+
 
 // $query  = "SELECT name, subject, message FROM contact";
 // $result = mysql_query($query);
@@ -26,7 +65,7 @@ if ( $user->is_loaded() ){
 /* Cuidado... por enquanto o sistema lista todas as viagens cuja data de inicio não expirou
 Não implementei o algoritmo que faz o cruzamento e mostra os viagens... */
 //duvida fazer uma lista dessa para cada viagem????????
-//responsáveis
+//Acompanhantes
 $data = date ( "Y-m-d" );// verificação para mostrar somente as viagens que não aconteceram ainda
 $query  = "SELECT V.Data_inicio,V.Data_fim,V.Estado,R.Telefone,R.Nome,R.CPF,R.email, B.MODO_boqueio, B.Data, V.Cidade FROM  bloqueio B,usuario U,responsavel R, viagem V WHERE U.CPF=B.CPF AND R.CPF=U.CPF AND V.CPF=R.CPF AND B.bloqueado=0 AND Data_inicio > '".$data."'";
 // essa query retorna todos as viagens cadastradas de responsaveis que não estão bloqueados
@@ -34,7 +73,7 @@ $result = mysql_query($query);
 $listagem_acompanhantes=array();
 while($row = mysql_fetch_array($result))
 {
-    $listagem_acompanhantes[] = array('name' => $row['Nome'], 'phone' => $row['Telefone'],'Cidade'=>$row['Cidade'],'Estado' => $row['Estado'],'dia1' => $row['Data_inicio'],'dia2' => $row['Data_fim']);
+    $listagem_acompanhantes[] = array('name' => $row['Nome'], 'CPF' => $row['CPF'], 'phone' => $row['Telefone'],'Cidade'=>$row['Cidade'],'Estado' => $row['Estado'],'dia1' => $row['Data_inicio'],'dia2' => $row['Data_fim']);
 }
 
 
@@ -46,7 +85,7 @@ $result = mysql_query($query);
 $listagem_idosos=array();
 while($row = mysql_fetch_array($result))
 {
-    $listagem_idosos[] = array('name' => $row['Nome'], 'dia1' => $row['datainicio'],'dia2' => $row['datafim'],'cidade'=>$row['Cidade'],'estado'=>$row['Estado'],'endereco'=>$row['Endereco']/*$row['Endereco']*/,'numero_endereco'=>$row['Numero_endereco']);
+    $listagem_idosos[] = array('name' => $row['Nome'], 'CPF' => $row['CPF'],  'dia1' => $row['datainicio'],'dia2' => $row['datafim'],'cidade'=>$row['Cidade'],'estado'=>$row['Estado'],'endereco'=>$row['Endereco']/*$row['Endereco']*/,'numero_endereco'=>$row['Numero_endereco']);
 }
 
 
