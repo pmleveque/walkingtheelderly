@@ -7,14 +7,15 @@
 {section name=viagens loop=$viagens}
 <tr>
 		<th>Viagem</th>
-		<th>Cidade</th>
+		<th>Data Inicio</th>
+		<th>Data Fim</th>
 	</tr>
 {strip}
    <tr bgcolor="{cycle values="#cfcfc1,#ffffff"}">
       <td>{$viagens[viagens].Id}</td>
-	  <td>{$viagens[viagens].cidade}</td>
+	  <td>{$viagens[viagens].datain}</td>
+	  <td>{$viagens[viagens].datafim}</td>
    </tr>
-
 <tr>
 		<th>Nome</th>
 	      <th>Phone</th>

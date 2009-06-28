@@ -52,7 +52,7 @@ $result = mysql_query($sql);
 $listagem=array();
 while($row = mysql_fetch_array($result))
 {
-    $listagem[] = array('Id' =>$row['Id_viagem'], 'cidade'=>$row['Cidade']);
+    $listagem[] = array('Id' =>$row['Id_viagem'], 'datain'=>$row['Data_inicio'], 'datafim'=>$row['Data_fim']);
 }
 return $listagem;
 } 
