@@ -10,5 +10,6 @@
 	</p>
 	
 	<p> <a href="cadastrar_usuario.php">Quero cadastrar-me</a></p>
+	<p> <a href="esqueci.php">Esqueceu sua senha?</a></p>
 
 {include file="footer.tpl"}
