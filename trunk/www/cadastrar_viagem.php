@@ -3,7 +3,7 @@
 require 'initialize.inc.php';
 
 if ( $user->is_loaded() ){
-	$query  = "SELECT * FROM viagem";// verificação de cadastro de viagem
+	/*$query  = "SELECT * FROM viagem";// verificação de cadastro de viagem
 $result = mysql_query($query);
 
 while($row = mysql_fetch_array($result, MYSQL_ASSOC))
@@ -13,7 +13,7 @@ while($row = mysql_fetch_array($result, MYSQL_ASSOC))
 		 "CPF : {$row['CPF']}<br>".
 		 "Id:{$row['Id_viagem']}<br>".
          "Cidade : {$row['Cidade']} <br><br>";
-}
+}*/
 	//TODO: nada aqui...
 	//as modificações tem que ser feitas no arquivo tpl seguinte (é o proprio formulario)
 	$smarty->assign("title", "Cadastrar Viagem");

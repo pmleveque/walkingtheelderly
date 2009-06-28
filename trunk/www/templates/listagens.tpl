@@ -10,7 +10,7 @@
 		<th>Cidade</th>
 	</tr>
 {strip}
-   <tr bgcolor="{cycle values="#fafafa,#ffffff"}">
+   <tr bgcolor="{cycle values="#cfcfc1,#ffffff"}">
       <td>{$viagens[viagens].Id}</td>
 	  <td>{$viagens[viagens].cidade}</td>
    </tr>
