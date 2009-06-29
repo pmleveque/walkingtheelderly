@@ -11,7 +11,7 @@ if ( $user->is_loaded() ){
 
 
 /* Tratamento dos dados do formulário */
-if ($action=$_GET['action']) {
+if ($action==$_GET['action']) {
 	$cpf_acompanhante = $_GET['acompanhante'];
 	switch ($action) {
 		case 'status':
