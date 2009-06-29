@@ -13,9 +13,9 @@
 	$update="UPDATE usuario SET Senha='".$nova."' WHERE CPF='".$cpf."'";
 	$res=mysql_query($update);
 	$recebemsg ="nova senha:".$nova;
-	$headers = "From: ronaldotadashi@gmail.com";
+	$headers = "From: admin@localhost";
 	$mensagem   = "<h3>From:</h3> ";
-	$mensagem  .= "administrador" . "ronaldotadashi@gmail.com";
+	$mensagem  .= "administrador" . "admin@localhost";
 	$mensagem  .= "<h3>Assunto:</h3>";
 	$mensagem  .= "WTE recuperação de senha";
 	$mensagem  .= "<h3>Mensagem</h3>";
