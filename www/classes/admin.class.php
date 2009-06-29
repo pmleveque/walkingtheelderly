@@ -24,6 +24,16 @@ var $dbTable2 = 'bloqueio';
 
 
     }
+	function listalog(){
+	$query  = "SELECT * FROM log";
+	$result = mysql_query($query);
+
+	while($row = mysql_fetch_array($result, MYSQL_ASSOC))
+	{
+		$listagem[] = array('titulo' => $row['titulo'], 'log' => $row['log']);
+	}
+	return $listagem;
+	}
 	
 	function desbloquear($CPF){
 	$data = date ( "Ymd" );
