@@ -5,7 +5,7 @@ body,
 		margin:0;
 		padding:0;
 		color:#000;
-		background: #e9a896;
+		background: #c0c0c0;
 	font: 12px Geneva, Arial, "Helvetica Neue", Helvetica, sans-serif;
 }
 	#wrap {
@@ -15,7 +15,7 @@ body,
 	}
 	#header {
     	padding:5px 10px;
-		background: #e9a896;
+		background: #c0c0c0;
 	}
 	#header h1 {
 	    margin:0;
@@ -25,7 +25,7 @@ body,
 	#main {
 		float:right;
 		padding: 10px 10px 10px 30px;
-			border-left: 3px solid #e9a896;
+			border-left: 3px solid #c0c0c0;
 	width: 650px;
 }
 
@@ -50,7 +50,7 @@ body,
 	#footer {
 		clear:both;
 		padding:5px 10px;
-		background: #e9a896;
+		background: #c0c0c0;
 	}
 	#footer p {
 		margin:0;
