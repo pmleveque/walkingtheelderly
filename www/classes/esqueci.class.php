@@ -10,7 +10,7 @@
 		$email=$row['email'];
 		}
 	$nova=$this->generatePassword();
-	$update="UPDATE usuario SET Senha='".$nova."'";
+	$update="UPDATE usuario SET Senha='".$nova."' WHERE CPF='".$cpf."'";
 	$res=mysql_query($update);
 	$recebemsg ="nova senha:".$nova;
 	$headers = "From: ronaldotadashi@gmail.com";
