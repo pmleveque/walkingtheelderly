@@ -24,7 +24,7 @@
       <td>{$acompanhantes[acomp].viagem}</td>
 	  <td>{$acompanhantes[acomp].datainicio}<br />
       {$acompanhantes[acomp].datafim}</td>
-	  <td>{$acompanhantes[acomp].name}</td>
+	  <td><a href="consulta.php?acompanhante={$acompanhantes[acomp].CPF}">{$acompanhantes[acomp].name}</a></td>
       <td>{$acompanhantes[acomp].phone}</td>
 	  <td>{$acompanhantes[acomp].Cidade}<br />
 	  {$acompanhantes[acomp].Estado}</td>
