@@ -71,7 +71,7 @@ $result = mysql_query($query);
 while($row = mysql_fetch_array($result))
 {
 
-    $listagem_acompanhantes[] = array('viagem'=>$var,'idcruza'=>$row['Id_viagem'],'datainicio'=>$var1,'datafim'=>$var2, 'name' => $row['Nome'], 'phone' => $row['Telefone'],'Cidade'=>$row['Cidade'],'Estado' => $row['Estado'],'dia1' => $row['datainicio'],'dia2' => $row['datafim'],'dataini'=>$var1, 'dataf'=>$var2);
+    $listagem_acompanhantes[] = array('CPF'=>$row['CPF'],'viagem'=>$var,'idcruza'=>$row['Id_viagem'],'datainicio'=>$var1,'datafim'=>$var2, 'name' => $row['Nome'], 'phone' => $row['Telefone'],'Cidade'=>$row['Cidade'],'Estado' => $row['Estado'],'dia1' => $row['datainicio'],'dia2' => $row['datafim'],'dataini'=>$var1, 'dataf'=>$var2);
 	}
 	}
 return $listagem_acompanhantes;

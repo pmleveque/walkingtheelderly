@@ -2,9 +2,9 @@
 require 'initialize.inc.php';
 	if ($user->is_admin()==true ){
 		$smarty->assign("title", "Pagina de Desbloqueio");/*admin ok*/
-		
-		
-		
+		if(!(empty($_GET['cpf']))){
+		$var=$admin->desbloquear($_GET['cpf']);
+		}
 		//listagem
 		$query  = "SELECT R.Nome,R.CPF,R.email, B.MODO_boqueio, B.Data FROM  bloqueio B,usuario U,responsavel R WHERE U.CPF=B.CPF AND R.CPF=U.CPF AND B.bloqueado=1";   /*Modificar o query para mostrar só os que são bloqueados */
 		$result = mysql_query($query);

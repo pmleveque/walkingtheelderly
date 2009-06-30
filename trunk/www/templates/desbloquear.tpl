@@ -21,7 +21,7 @@
       <td>{$listagem[elt].email}</td>
 	  <td>{$listagem[elt].data_inicio}</td>
 	  <td>{$listagem[elt].tempo_block}</td>
-      <td><a href="desbloquear_submit.php?cpf={$listagem[elt].cpf}">Desbloquear </a></td>
+      <td><a href="desbloquear.php?cpf={$listagem[elt].cpf}">Desbloquear </a></td>
    </tr>
 {/strip}
 {/section}
