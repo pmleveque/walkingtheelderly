@@ -2,6 +2,7 @@
 
 require 'initialize.inc.php';
 
+
 	if (!(empty($_POST['cpf']))OR empty($_POST['username'])) {
 	$cpf=$_POST['cpf'];
 	$esq=new esqueci($cpf);

@@ -3,7 +3,6 @@
 require 'initialize.inc.php';
 
 
-
 //essa pagina recebe os resultados do formulario
 if(empty($_POST['compromisso'])){//verifica se o usuario não aceitou o termo de compromisso
 	$smarty->assign("notice", 'Voce nao concordou com nossos termos');//não concordou com os termos de uso
@@ -33,7 +32,12 @@ else if(!(empty($_POST['username']) OR empty($_POST['cpf']) OR empty($_POST['cpf
 	}
 	else {
 		$smarty->assign("notice", 'Usuário cadastrado com sucesso');//cadastro sucesso
-		$smarty->display('login.tpl');
+		$email = new enviaemail;
+        $email->envia($_POST['email'], 'Novo Cadastro', 'Obrigado por se cadastratar no sistema Walking The Elderly<br>Seu nome de usuário é '.$_POST['username'].' e sua senha é '.$_POST['password']);
+        $smarty->display('login.tpl');
+
+
+
 	}
 
 }else{
