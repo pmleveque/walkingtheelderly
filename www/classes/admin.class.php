@@ -43,7 +43,7 @@ var $dbTable2 = 'bloqueio';
     }
 	
     function bloquear($CPF, $tempo){
-	$data = date ( "Ymd" );
+	$data = date ( "Y-m-d" );
 	$sql = "UPDATE `{$this->dbTable2}` SET bloqueado=1, MODO_boqueio ='".$tempo."', `Data` = '".$data."' WHERE CPF = '".$CPF."'";
 	$execucao = mysql_query($sql);	
 	return $execucao;
