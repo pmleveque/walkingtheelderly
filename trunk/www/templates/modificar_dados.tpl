@@ -112,7 +112,7 @@
 	<p align="center">
     
 <input type="submit" value="Modificar"/>
-<input type="submit" value="Cancelar"/>
+<input type="button" value="Cancelar" onClick="window.location.href='index.php'"/>
 
 </FORM>
 
