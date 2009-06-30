@@ -4,24 +4,16 @@
 
 <table>
 	
-{section name=viagens loop=$viagens}
+
 <tr>
-		<th>Viagem</th>
-		<th>Data Inicio</th>
-		<th>Data Fim</th>
-	</tr>
-{strip}
-   <tr bgcolor="{cycle values="#cfcfc1,#ffffff"}">
-      <td>{$viagens[viagens].Id}</td>
-	  <td>{$viagens[viagens].datain}</td>
-	  <td>{$viagens[viagens].datafim}</td>
-   </tr>
-<tr>
+		<th>Id viagem</th>
+		<th>Periodo viagem</th>
 		<th>Nome</th>
 	      <th>Phone</th>
 	      <th>Cidade<br />
 		  Estado</th>
-		  <th>Periodo<br />
+		  <th>Periodo disponivel<br />
+		  do Acompanhante<br />
 		  Ano-mes-dia</th>
 	      <th>Status</th>
 	      <th>Feedback</th>
@@ -29,12 +21,15 @@
 {section name=acomp loop=$acompanhantes}
 {strip}
    <tr bgcolor="{cycle values="#fafafa,#ffffff"}">
-      <td>{$acompanhantes[acomp].name}</td>
+      <td>{$acompanhantes[acomp].viagem}</td>
+	  <td>{$acompanhantes[acomp].datainicio}<br />
+      {$acompanhantes[acomp].datafim}</td>
+	  <td>{$acompanhantes[acomp].name}</td>
       <td>{$acompanhantes[acomp].phone}</td>
 	  <td>{$acompanhantes[acomp].Cidade}<br />
 	  {$acompanhantes[acomp].Estado}</td>
-      <td>inicio:{$acompanhantes[acomp].dia1}<br />
-      fim:{$acompanhantes[acomp].dia2}</td>
+      <td>{$acompanhantes[acomp].dia1}<br />
+      {$acompanhantes[acomp].dia2}</td>
 	  <td>
 		<form action="listagens.php" method="get" id="status" accept-charset="utf-8">
 			<input type="hidden" name="action" value="status">
@@ -54,9 +49,7 @@
    </tr>
 {/strip}
 {/section}
-{/strip}
 
-{/section}
 </table>
 
 
