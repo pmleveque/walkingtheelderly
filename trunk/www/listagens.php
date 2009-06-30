@@ -11,38 +11,35 @@ if ( $user->is_loaded() ){
 
 
 /* Tratamento dos dados do formulário */
-if ($action==$_GET['action']) {
+if ($_GET['action']) {
+	$action=$_GET['action'];
 	$cpf_acompanhante = $_GET['acompanhante'];
+	$viagem_id = $_GET['viagem'];
 	switch ($action) {
 		case 'status':
-		
 		switch ($_GET['status']) {
 			case 'talvez':
-			# code... slq query
+			// mysql_query("UPDATE `viagem` SET status='1' WHERE Id_viagem=$viagem_id");
+			
 			break;
 			case 'confirmado':
-			# code...
+			// mysql_query("UPDATE `viagem` SET status='2' WHERE Id_viagem=$viagem_id");
+			
 			break;				
 			case 'nao':
-			# code...
-			break;			
-			default:
-			# code...
+			// mysql_query("UPDATE `viagem` SET status='3' WHERE Id_viagem=$viagem_id");
+			
 			break;
 		}		
 		break;
 
 		case 'fim':
-		# code...
+			// mysql_query("UPDATE `combina` SET status='1' WHERE Id_viagem_2=$viagem_id");
 		break;
 
 		case 'ausente':
-		# code...
-		break;
+			// mysql_query("UPDATE `combina` SET status='2' WHERE Id_viagem_2=$viagem_id");
 
-
-		default:
-		# code...
 		break;
 	}
 }
@@ -86,18 +83,18 @@ $listagem_acompanhantes=array();
 while($row = mysql_fetch_array($result))
 {
 
-    $listagem_acompanhantes[] = array('name' => $row['Nome'], 'phone' => $row['Telefone'],'Cidade'=>$row['Cidade'],'Estado' => $row['Estado'],'dia1' => $row['datainicio'],'dia2' => $row['datafim']);
+    $listagem_acompanhantes[] = array('name' => $row['Nome'], 'CPF' => $row['CPF'], 'phone' => $row['Telefone'],'Cidade'=>$row['Cidade'],'Estado' => $row['Estado'],'dia1' => $row['datainicio'],'dia2' => $row['datafim']);
 }
 
 
 //idosos os quais o responsável tem que cuidar
 // id_viagem1 representa o reponsavel pelo idoso e id_viagem2 representa o acompanhante desse idoso
-$query  = "SELECT I.Nome, I.Cidade, I.Estado, I.Endereco, I.Numero_endereco,C.datainicio,C.datafim FROM idoso I, combina C, responsavel R,responsavel A , viagem V, viagem VA WHERE V.CPF=R.CPF AND I.CPF_IDOSO=R.CPF_Idoso AND C.Id_viagem_2=V.Id_viagem AND VA.CPF= A.CPF AND A.CPF='".$CPF."' AND C.Id_viagem_1=VA.Id_viagem ORDER BY I.Cidade";
+$query  = "SELECT I.Nome, I.CPF_IDOSO, I.Cidade, I.Estado, I.Endereco, I.Numero_endereco,C.datainicio,C.datafim FROM idoso I, combina C, responsavel R,responsavel A , viagem V, viagem VA WHERE V.CPF=R.CPF AND I.CPF_IDOSO=R.CPF_Idoso AND C.Id_viagem_2=V.Id_viagem AND VA.CPF= A.CPF AND A.CPF=$CPF AND C.Id_viagem_1=VA.Id_viagem ORDER BY I.Cidade";
 $result = mysql_query($query);
 $listagem_idosos=array();
 while($row = mysql_fetch_array($result))
 {
-   $listagem_idosos[] = array('name' => $row['Nome'], 'dia1' => $row['datainicio'],'dia2' => $row['datafim'],'cidade'=>$row['Cidade'],'estado'=>$row['Estado'],'endereco'=>$row['Endereco']/*$row['Endereco']*/,'numero_endereco'=>$row['Numero_endereco']);
+   $listagem_idosos[] = array('name' => $row['Nome'], 'CPF' => $row['CPF_IDOSO'], 'dia1' => $row['datainicio'],'dia2' => $row['datafim'],'cidade'=>$row['Cidade'],'estado'=>$row['Estado'],'endereco'=>$row['Endereco']/*$row['Endereco']*/,'numero_endereco'=>$row['Numero_endereco']);
 }
 
 
