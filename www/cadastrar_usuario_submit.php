@@ -33,7 +33,7 @@ else if(!(empty($_POST['username']) OR empty($_POST['cpf']) OR empty($_POST['cpf
 	else {
 		$smarty->assign("notice", 'Usuário cadastrado com sucesso');//cadastro sucesso
 		$email = new enviaemail;
-        $email->envia($_POST['email'], 'Novo Cadastro', 'Obrigado por se cadastratar no sistema Walking The Elderly<br>Seu nome de usuário é '.$_POST['username'].' e sua senha é '.$_POST['password']);
+        $email->envia($_POST['email'], 'Novo Cadastro', 'Obrigado por se cadastratar no sistema Walking The Elderly<br>Seu nome de usuário é <b>'.$_POST['username'].'</b> e sua senha é <b>'.$_POST['password']);
         $smarty->display('login.tpl');
 
 
