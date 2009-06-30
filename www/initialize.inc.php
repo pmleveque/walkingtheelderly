@@ -14,6 +14,7 @@ require 'classes/admin.class.php';
 require 'classes/listagens.class.php';
 require 'classes/esqueci.class.php';
 require 'classes/enviaemail.class.php';
+require 'classes/combina.class.php';
 
 $smarty = new Smarty;
 $smarty->compile_check = true;

@@ -8,7 +8,9 @@ if ( $user->is_loaded() ){
 	// essa pagina contem a listagem dos idosos a cuidar
 	// e dos acompanhantes do seu idoso
 	////////////////////////////
-
+if(!(empty($_GET['viagemcruza'])OR empty($_GET['viagem']) OR empty($_GET['datai']) OR empty($_GET['dataf']))){
+$combina= new combina($_GET['viagem'],$_GET['viagemcruza'],$_GET['datai'],$_GET['dataf']);
+}
 
 /* Tratamento dos dados do formulário */
 if ($action==$_GET['action']) {

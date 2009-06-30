@@ -31,18 +31,7 @@
       <td>{$acompanhantes[acomp].dia1}<br />
       {$acompanhantes[acomp].dia2}</td>
 	  <td>
-		<form action="listagens.php" method="get" id="status" accept-charset="utf-8">
-			<input type="hidden" name="action" value="status">
-			<input type="hidden" name="viagem" value="{$viagens[viagens].Id}">
-			<input type="hidden" name="acompanhante" value="{$acompanhantes[acomp].CPF}">
-			<select name="status" size="1"  onchange="this.form.submit()">
-				<option value="{$acompanhantes[acomp].current_status}">{$acompanhantes[acomp].current_status}</option>
-				<option value="talvez">Talvez</option>
-				<option value="confirmado">Confirmado</option>
-				<option value="nao">Não</option>
-			</select>
-			<!-- <input type="submit" value="Mudar"> -->
-		</form>
+		<a href="listagens.php?viagemcruza={$acompanhantes[acomp].idcruza}&viagem={$acompanhantes[acomp].viagem}&datai={$acompanhantes[acomp].dataini}&dataf={$acompanhantes[acomp].dataf}">Combina</a>
 		</td>
       <td><a href="feedback.php?acompanhante={$acompanhantes[acomp].CPF}">Feedback</a></td>
 <td><a href="listagens.php?action=fim&acompanhante={$acompanhantes[acomp].CPF}&viagem={$viagens[viagens].Id}">Fim</a> <a href="listagens.php?action=ausente&acompanhante={$acompanhantes[acomp].CPF}&viagem={$viagens[viagens].Id}">Ausente</a></td>
