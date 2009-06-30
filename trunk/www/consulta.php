@@ -16,6 +16,15 @@ if ( $user->is_loaded() ){
 		
 	}
 	
+	$query2  = "SELECT * FROM feedback WHERE CPF=$cpf_acompanhante";
+	$result = mysql_query($query2);
+	$feed = array();
+	while($row = mysql_fetch_array($result))
+	{
+		$feed[] = $row;		
+	}
+	$smarty->assign("feed", $feed);
+	
 
 	
 	
@@ -27,6 +36,7 @@ if ( $user->is_loaded() ){
 		// neste caso, o usuario não é logado... ele precisa se logar:
 		header('Location: login.php');
 	}
+
 
 
 ?>
