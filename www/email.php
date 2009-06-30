@@ -1,15 +1,6 @@
 <?php
-require_once('phpgmailer/class.smtp.php');
-$mail = new smtp();
-$mail->Connect('mail.vsillc.com','25');
-//$mail->Username = 'user@domain.com';
-//$mail->Password = 'password';
-$mail->Hello();
-$mail->Mail('andre@vsill.com');
-$mail->Recipient('andreqbertuzzi@gmail.com');
-$mail->Data('Aee');
-$mail->FromName = 'andreee';
-$mail->Subject = 'ae';
-$mail->Body = 'Hey buddy, heres an email!';
-$mail->Send('ccc');
+require_once('phpgmailer/class.phpgmailer.php');
+require 'classes/enviaemail.class.php';
+$email = new enviaemail;
+$email->envia('andreqbertuzzi@gmail.com', 'Novo Cadastro', 'Obrigado por se cadastratar no sistema Walking The Elderly<br>Seu nome de usuário é');
 ?> 

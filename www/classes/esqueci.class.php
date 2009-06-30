@@ -1,6 +1,10 @@
 <?php
+ //require 'class.phpgmailer.php'; //path to the above folder
+ //require 'classes/class.phpgmailer.php';
+
  class esqueci {
     var $cpf;
+    var $mensagem;
 	function esqueci($cpf){
 	$this->cpf=$cpf;
 	$sql="SELECT email FROM responsavel WHERE CPF='".$cpf."'";
@@ -9,24 +13,35 @@
 		{
 		$email=$row['email'];
 		}
+
 	$nova=$this->generatePassword();
 	$update="UPDATE usuario SET Senha='".$nova."' WHERE CPF='".$cpf."'";
 	$res=mysql_query($update);
-	$recebemsg ="nova senha:".$nova;
-	$headers = "From: admin@localhost";
-	$mensagem   = "<h3>From:</h3> ";
-	$mensagem  .= "administrador" . "admin@localhost";
-	$mensagem  .= "<h3>Assunto:</h3>";
-	$mensagem  .= "WTE recuperação de senha";
-	$mensagem  .= "<h3>Mensagem</h3>";
+	$recebemsg ="<h3>Sua nova senha Ã© </h3>".$nova;
+	$mensagem  .= "<h3>WTE recuperaÃ§Ã£o de senha</h3>";
 	$mensagem  .= "<p>";
 	$mensagem  .= $recebemsg;
 	$mensagem  .= "</p>";
-	$envia =  mail($email,"E-mail do Site",$mensagem,$headers);
+
+    $envia = new enviaemail();
+    $envia->envia($email,"E-mail do Site",$mensagem);
 	return $envia;
+    
+
 	}
-	
-	
+ /*
+ function enviaemail($email,$subject,$body) {
+    	$mail = new PHPGMailer();
+        $mail->Username = 'walkingtheelderly@gmail.com'; //SMTP username
+        $mail->Password = 'elderlythewalking'; //SMTP password
+        $mail->From = 'walkingtheelderly@gmail.com';
+        $mail->FromName = 'Walking the Elderly - Admin';
+        $mail->IsHTML(true);
+        $mail->Subject = $subject;
+        $mail->AddAddress($email);
+        $mail->Body = $body;
+        $mail->Send();
+ }*/
 	function generatePassword($length=9, $strength=0) {
 	$vowels = 'aeuy';
 	$consonants = 'bdghjmnpqrstvz';
