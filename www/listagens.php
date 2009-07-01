@@ -13,7 +13,7 @@ $combina= new combina($_GET['viagem'],$_GET['viagemcruza'],$_GET['datai'],$_GET[
 }
 
 /* Tratamento dos dados do formulário */
-if ($action==$_GET['action']) {
+/*if ($action==$_GET['action']) {// isso era parte da definição do status presente no interface de papel mas que não será implementado pois não faz parte da especificação de requisitos
 	$cpf_acompanhante = $_GET['acompanhante'];
 	switch ($action) {
 		case 'status':
@@ -47,7 +47,7 @@ if ($action==$_GET['action']) {
 		# code...
 		break;
 	}
-}
+}*/
 
 
 

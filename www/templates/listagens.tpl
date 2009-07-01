@@ -34,7 +34,6 @@
 		<a href="listagens.php?viagemcruza={$acompanhantes[acomp].idcruza}&viagem={$acompanhantes[acomp].viagem}&datai={$acompanhantes[acomp].dataini}&dataf={$acompanhantes[acomp].dataf}">Combina</a>
 		</td>
       <td><a href="feedback.php?acompanhante={$acompanhantes[acomp].CPF}">Feedback</a></td>
-<td><a href="listagens.php?action=fim&acompanhante={$acompanhantes[acomp].CPF}&viagem={$viagens[viagens].Id}">Fim</a> <a href="listagens.php?action=ausente&acompanhante={$acompanhantes[acomp].CPF}&viagem={$viagens[viagens].Id}">Ausente</a></td>
    </tr>
 {/strip}
 {/section}
