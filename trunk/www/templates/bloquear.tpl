@@ -13,7 +13,7 @@
 {section name=elt loop=$listagem}
 {strip}
    <tr bgcolor="{cycle values="#fafafa,#ffffff"}">
-      <td>{$listagem[elt].name}</td>
+		<td><a href="consultaadmin.php?responsavel={$listagem[elt].cpf}">{$listagem[elt].name}</a></td>
       <td>{$listagem[elt].cpf}</td>
       <td>{$listagem[elt].email}</td>		
       <td><a href="bloquear.php?cpf={$listagem[elt].cpf}&tempo=7dias">7dias </a>&nbsp;
