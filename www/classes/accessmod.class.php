@@ -289,33 +289,32 @@ class flexibleAccess{
  
  }
 
-   function modifica($current_id,$user,$pass,$end, $Cidade, $Estado, $Bairro, $tel, $email, $fumo, $alcool, $observacoes, $endidoso,$Cidadeidoso,$Estadoidoso,$Bairroidoso,$telidoso,$emailidoso,$fumoidoso,$alcoolidoso,$medicamentos,$num,$num2){
-
-  $sql = "UPDATE `{$this->dbTable}` SET Username='".$user."' ,Senha='".$pass."' WHERE CPF='".$current_id.'"';
-  $result_of_query = $this->query($sql);
-  if (!$result_of_query) {
-		return 0;
-		}
-
-  $sql = "UPDATE `{$this->dbTable2}` SET Endereco='".$end."',Cidade='".$Cidade."',Estado='".$Estado."',Bairro='".$Bairro."',Telefone='".$tel."',email='".$email."',fumo='".$fumo."',alcool='".$alcool."',observacoes='".$observacoes."',Numero_endereco='".$num."' WHERE CPF='".$current_id.'"';
+   function modifica($current_id,$end, $Cidade, $Estado, $Bairro, $tel, $fumo, $alcool, $observacoes, $endidoso,$Cidadeidoso,$Estadoidoso,$Bairroidoso,$telidoso,$emailidoso,$fumoidoso,$alcoolidoso,$medicamentos,$num,$num2){
+  $sql = "UPDATE `{$this->dbTable2}` SET Endereco=\"$end\",Cidade=\"$Cidade\",Estado=\"$Estado\",Bairro=\"$Bairro\",Telefone=\"$tel\",fumo=\"$fumo\",alcool=\"$alcool\",observacoes=\"$observacoes\",Numero_endereco=\"$num\" WHERE CPF=$current_id";
   	$result_of_query = $this->query($sql);
    if (!$result_of_query) {
 		return 1;
 		}
-  $sql = "UPDATE `{$this->dbTable3}` SET Endereco='".$endidoso."',Numero_endereco='".$num2."',Cidade='".$Cidadeidoso."',Estado='".$Estadoidoso."',Bairro='".$Bairroidoso."',Telefone='".$telidoso."',Email='".$emailidoso."',Fumo='".$fumoidoso."',Alcool='".$alcoolidoso."',Medicamentos='".$medicamentos."' WHERE CPF='".$current_id.'"';
+   $sql = "SELECT CPF_Idoso FROM `{$this->dbTable2}` WHERE CPF=$current_id";
+  	$result_of_query = $this->query($sql);
+ $row = mysql_fetch_array($result_of_query);
+  $sql = "UPDATE `{$this->dbTable3}` SET Endereco=\"$endidoso\",Numero_endereco=\"$num2\",Cidade=\"$Cidadeidoso\",Estado=\"$Estadoidoso\",Bairro=\"$Bairroidoso\",Telefone=\"$telidoso\",Email=\"$emailidoso\",Fumo=\"$fumoidoso\",Alcool=\"$alcoolidoso\",Medicamentos=\"$medicamentos\" WHERE CPF=$row";
    $result_of_query = $this->query($sql);
     if (!$result_of_query) {
 		return 2;
 		}
-	$data = date ( "Y-m-d" );
-	$sql = "UPDATE `{$this->dbTable4}` SET(`MODO_boqueio`, `bloqueado`, `Data`, `CPF`) VALUES ('\0',0,'".$data."','".$id."')";
-	$result_of_query = $this->query($sql);
-    if (!$result_of_query) {
-		return 3;
-		}
+	
 	else {
 	return 4;}
 
+
+ }
+
+   function modificapass($current_id,$passnew){
+  //$password =  $this->query("SELECT Senha FROM `{$this->dbTable}` WHERE CPF='$current_id'");
+  $sql = "UPDATE ".$this->dbTable." SET Senha=\"$passnew\" WHERE CPF=$current_id";
+  $this->query($sql);
+  return 1;
 
  }
  
