@@ -2,14 +2,6 @@
 
 <form method="post" action="modificar_dados_submit.php" accept-charset="utf-8"/>
 
-<h1>Login/senha</h1>
-<p>Escolha um novo nome de usuário e uma nova senha para acessar o Walking the Elderly</p>
-<p>	
-	usuario*: <input type="text" name="username" /><br /><br />
-	senha: <input type="password" name="password" /><br /><br />
-	email*: <input type="text" name="email" SIZE="46" /><br /><br />
-</p>
-
 <h1>Dados do Responsável</h1>
 <p>Atualize as informações do responsável
 </p>
