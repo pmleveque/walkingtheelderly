@@ -1,4 +1,4 @@
-{include file="header_admin.tpl"}
+{include file="header.tpl"}
 
 <form method="post" action="feedback.php" accept-charset="utf-8" />
 	<p><label for="nota">Nota do feedback: </label><input type="text" name="nota_feed" value="0" id="nota_feed">
