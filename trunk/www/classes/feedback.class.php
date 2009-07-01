@@ -28,6 +28,10 @@ class feedback {
 		$execucao = mysql_query($sql);	
 		return $execucao;
     }
+	
+	function exibe feedbacksusuario($CPFusuario){
+		$sql = "SELECT * FROM'{$this->db
+	
 }
 
 
