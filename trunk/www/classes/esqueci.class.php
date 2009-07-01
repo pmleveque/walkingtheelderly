@@ -17,8 +17,8 @@
 	$nova=$this->generatePassword();
 	$update="UPDATE usuario SET Senha='".$nova."' WHERE CPF='".$cpf."'";
 	$res=mysql_query($update);
-	$recebemsg ="<h3>Sua nova senha é </h3>".$nova;
-	$mensagem  .= "<h3>WTE recuperação de senha</h3>";
+	$recebemsg ="<h3>Sua nova senha � </h3>".$nova;
+	$mensagem  .= "<h3>WTE recuperacao de senha</h3>";
 	$mensagem  .= "<p>";
 	$mensagem  .= $recebemsg;
 	$mensagem  .= "</p>";
