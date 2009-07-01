@@ -7,6 +7,7 @@
 	<li><a href="listagens.php">Listagens</a></li>
 <li><a href="cadastrar_viagem.php">Cadastrar viagem</a></li>
 <li><a href="modificar_dados.php">Modificar dados</a></li>
+<li><a href="modificar_senha.php">Modificar senha</a></li>
 
 {else}
 <p>Bem-vindo no sistema WtE... <br />Você não esta logado! <b><a href="login.php">Log In</a></b></p>
