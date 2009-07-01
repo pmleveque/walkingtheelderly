@@ -46,7 +46,7 @@
 <br />
 <br />
 <br />
-<h1 id="idosos">Idosos</h1>
+<h1 id="idosos">Idosos necessitando dos seus cuidados</h1>
 
 <table>
 	<tr>
