@@ -42,7 +42,7 @@
 
 
 
-<input type="submit" value="Cadastrar-se" />
+<input type="submit" value="Cadastrar viagem" />
 </form>
 
 

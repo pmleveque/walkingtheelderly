@@ -291,7 +291,7 @@ class flexibleAccess{
   function query($sql, $line = 'Uknown')
   {
     //if (defined('DEVELOPMENT_MODE') ) echo '<b>Query to execute: </b>'.$sql.'<br /><b>Line: </b>'.$line.'<br />';
-	$res = mysql_db_query($this->dbName, $sql, $this->dbConn);
+	$res = mysql_query($this->dbName, $sql, $this->dbConn);
 	if ( !$res )
 		$this->error(mysql_error($this->dbConn), $line);
 	return $res;

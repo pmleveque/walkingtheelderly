@@ -58,6 +58,7 @@ $data = date ( "Y-m-d" );
 $sql ="SELECT * FROM viagem  WHERE CPF='".$ID."' AND Data_inicio > '".$data."' AND status='0'";//seleciona todas as viagens  
 $res = mysql_query($sql);
 $listagem_acompanhantes=array();
+if($res!=null){
 while($row = mysql_fetch_array($res))
 {
 $query  = "SELECT T.datainicio,V.Id_viagem, T.datafim, V.Estado, R.Telefone, R.Nome, R.CPF, R.email, B.MODO_boqueio, B.Data, V.Cidade FROM  bloqueio B,usuario U,responsavel R, viagem V, tempodisponivel T WHERE U.CPF=B.CPF AND R.CPF=U.CPF AND V.CPF=R.CPF AND V.Estado='".$estado."' AND V.Cidade='".$cidade."' AND V.Id_viagem=T.Id_viagem AND V.combina='0' AND B.bloqueado=0 AND T.datafim >= '".$row['Data_fim']."' AND T.datainicio<='".$row['Data_inicio']."' AND V.status='0' AND T.datainicio > '".$data."'";
@@ -74,6 +75,7 @@ while($row = mysql_fetch_array($result))
     $listagem_acompanhantes[] = array('CPF'=>$row['CPF'],'viagem'=>$var,'idcruza'=>$row['Id_viagem'],'datainicio'=>$var1,'datafim'=>$var2, 'name' => $row['Nome'], 'phone' => $row['Telefone'],'Cidade'=>$row['Cidade'],'Estado' => $row['Estado'],'dia1' => $row['datainicio'],'dia2' => $row['datafim'],'dataini'=>$var1, 'dataf'=>$var2);
 	}
 	}
+}
 return $listagem_acompanhantes;
 } 
 

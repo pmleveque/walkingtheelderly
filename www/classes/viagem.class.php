@@ -20,6 +20,7 @@ class viagem {
 	var $dbUser = 'user';
 	var $dbName = 'grupo3';//nome do banco de dados utilizado
 	var $dbConn;
+	var $consulta = null;
 
 
 
@@ -36,8 +37,8 @@ function viagem($Data_inicio,$Data_fim,$Cidade,$Estado, $CPF){
     $this->Estado = $Estado;
 
 	$sql = "INSERT INTO `{$this->dbTable1}` (Data_inicio,Data_fim,CPF,Cidade,Estado,feedback_idoso,feedback_acompanhante,status,combina) VALUES ('".$Data_inicio."','".$Data_fim."','".$CPF."','".$Cidade."','".$Estado."',NULL,NULL,0,0)";
-	$result = mysql_query($sql); 
-
+	$result = mysql_query($sql) or die("Query failed with error: ".mysql_error()); 
+     echo $Estado;
 	$ID=$this->getviagem();
 	$boo=$this->inicializadisponivel() AND $result;
 
@@ -55,9 +56,11 @@ $Estado=$this->Estado;
 $CPF=$this->CPF;
 $sql = "SELECT Id_viagem FROM `{$this->dbTable1}` WHERE Data_inicio='".$Data_inicio."' AND Data_fim = '".$Data_fim."' AND CPF = '".$CPF."' AND Cidade = '".$Cidade."' AND Estado = '".$Estado."'";
 $result = mysql_query($sql);
-while($row = mysql_fetch_array($result))
+$consulta=array();
+while($row = mysql_fetch_array($result) and $result!=null)
 {
- $consulta = $row['Id_viagem'];  
+
+ $consulta[] =array( $row['Id_viagem']);  
 }
 $this->Id_viagem=$consulta;
 
