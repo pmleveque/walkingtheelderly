@@ -81,11 +81,12 @@ $CPF=$current_user;
 $query  = "SELECT I.Nome, I.Cidade, I.Estado, I.Endereco, I.Numero_endereco,C.datainicio,C.datafim FROM idoso I, combina C, responsavel R,responsavel A , viagem V, viagem VA WHERE V.CPF=R.CPF AND I.CPF_IDOSO=R.CPF_Idoso AND C.Id_viagem_2=V.Id_viagem AND VA.CPF= A.CPF AND A.CPF='".$CPF."' AND C.Id_viagem_1=VA.Id_viagem ORDER BY I.Cidade";
 $result = mysql_query($query);
 $listagem_idosos=array();
+if($result != null){
 while($row = mysql_fetch_array($result))
 {
    $listagem_idosos[] = array('name' => $row['Nome'], 'dia1' => $row['datainicio'],'dia2' => $row['datafim'],'cidade'=>$row['Cidade'],'estado'=>$row['Estado'],'endereco'=>$row['Endereco']/*$row['Endereco']*/,'numero_endereco'=>$row['Numero_endereco']);
 }
-
+}
 
 
 

@@ -6,13 +6,14 @@ require 'initialize.inc.php';
 		$var=$admin->desbloquear($_GET['cpf']);
 		}
 		//listagem
-		$query  = "SELECT R.Nome,R.CPF,R.email, B.MODO_boqueio, B.Data FROM  bloqueio B,usuario U,responsavel R WHERE U.CPF=B.CPF AND R.CPF=U.CPF AND B.bloqueado=1";   /*Modificar o query para mostrar só os que são bloqueados */
-		$result = mysql_query($query);
+		$query  = "SELECT R.Nome,R.CPF,R.email, B.MODO_bloqueio, B.Data FROM  bloqueio B,usuario U,responsavel R WHERE U.CPF=B.CPF AND R.CPF=U.CPF AND B.bloqueado=1";   /*Modificar o query para mostrar só os que são bloqueados */
+		$result = mysql_query($query)or die("Query failed with error: ".mysql_error());;
 		$listagem_responsavel=array();
-		while($row = mysql_fetch_array($result))
+		
+		while($row=mysql_fetch_array($result) and $result!=null )
 		{
 		
-		    $listagem_responsavel[] = array('name' => $row['Nome'],'cpf' => $row['CPF'],'tempo_block' => $row['MODO_boqueio'],'data_inicio' => $row['Data'],'email' => $row['email']);
+		    $listagem_responsavel[] = array('name' => $row['Nome'],'cpf' => $row['CPF'],'tempo_block' => $row['MODO_bloqueio'],'data_inicio' => $row['Data'],'email' => $row['email']);
 		}
 		
 		

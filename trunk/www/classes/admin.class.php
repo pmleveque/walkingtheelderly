@@ -38,14 +38,14 @@ var $dbTable2 = 'bloqueio';
 	function desbloquear($CPF){
 	$data = date ( "Ymd" );
 	$sql = "UPDATE `{$this->dbTable2}` SET bloqueado=0 WHERE CPF = '".$CPF."'";
-	$execucao = mysql_query($sql);	
+	$execucao = mysql_query($sql) or die("Query failed with error: ".mysql_error());	
 	return $execucao;
     }
 	
     function bloquear($CPF, $tempo){
 	$data = date ( "Y-m-d" );
-	$sql = "UPDATE `{$this->dbTable2}` SET bloqueado=1, MODO_boqueio ='".$tempo."', `Data` = '".$data."' WHERE CPF = '".$CPF."'";
-	$execucao = mysql_query($sql);	
+	$sql = "UPDATE `{$this->dbTable2}` SET bloqueado=1, MODO_bloqueio ='".$tempo."', `Data` = '".$data."' WHERE CPF = '".$CPF."'";
+	$execucao = mysql_query($sql) or die("Query failed with error: ".mysql_error());	
 	return $execucao;
     }
 

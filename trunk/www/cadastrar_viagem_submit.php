@@ -10,7 +10,6 @@ if ( $user->is_loaded() ){
 		$fim =  $_POST['anofim']."-".$_POST['mesfim']."-".$_POST['diafim'];
 		$cidade=$_POST['cidade'];
 		$estado=$_POST['estado'];
-		
 	$boole= new viagem($inicio,$fim , $cidade, $estado, $current_user);
 	
     //$CPF => $data;

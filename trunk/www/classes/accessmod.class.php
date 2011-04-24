@@ -278,7 +278,7 @@ class flexibleAccess{
 		return 2;
 		}
 	$data = date ( "Y-m-d" );
-	$sql = "INSERT INTO `{$this->dbTable4}` (`MODO_boqueio`, `bloqueado`, `Data`, `CPF`) VALUES ('\0',0,'".$data."','".$id."')";
+	$sql = "INSERT INTO `{$this->dbTable4}` (`MODO_bloqueio`, `bloqueado`, `Data`, `CPF`) VALUES ('\0',0,'".$data."','".$id."')";
 	$result_of_query = $this->query($sql);
     if (!$result_of_query) {
 		return 3;
@@ -342,7 +342,7 @@ $res = $this->query("SELECT * FROM `{$this->dbTable4}`
   function query($sql, $line = 'Uknown')
   {
     //if (defined('DEVELOPMENT_MODE') ) echo '<b>Query to execute: </b>'.$sql.'<br /><b>Line: </b>'.$line.'<br />';
-	$res = mysql_db_query($this->dbName, $sql, $this->dbConn);
+	$res = mysql_query( $sql)or die("Query failed with error: ".mysql_error());;
 	if ( !$res )
 		$this->error(mysql_error($this->dbConn), $line);
 	return $res;
